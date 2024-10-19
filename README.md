@@ -16,9 +16,9 @@ Please use this theme with "Unibody" in Window Style.
 
 ## Preview 预览
 
-![](.\imgs\Preview1.png)
+![](./imgs/Preview1.png)
 
-![](.\imgs\Preview2.png)
+![](./imgs/Preview2.png)
 
 ## Installation 安装
 
