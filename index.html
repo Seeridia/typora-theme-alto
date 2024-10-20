@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alto Theme</title>
+    <link href="https://fonts.font.im/css?family=Quattrocento+Sans" rel="stylesheet">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: #9FD7F0;
+            background-image: url(./imgs/background.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .title {
+            width: 20vw;
+        }
+
+        .subtitle {
+            font-size: 2vw;
+            font-family: 'Quattrocento Sans', sans-serif;
+        }
+
+        .zoom-link img {
+            transition: transform 0.3s ease;
+        }
+
+        .zoom-link:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="subtitle">— typora theme —</div>
+        <a href="https://github.com/Seeridia/typora-theme-alto" target="_blank" class="zoom-link">
+            <img src="./imgs/Logo2.png" alt="" class="title">
+        </a>
+        <div class="subtitle">Encounter more elegant thinking.</div>
+    </div>
+</body>
+
+</html>

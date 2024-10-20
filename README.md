@@ -20,6 +20,8 @@ Please use this theme with "Unibody" in Window Style.
 
 ![](./imgs/Preview2.png)
 
+
+
 ## Installation 安装
 
 1. Clone this repository or download `typora-theme-alto.zip` from [Latest Release](https://github.com/Seeridia/typora-theme-alto/releases/latest).
@@ -28,12 +30,28 @@ Please use this theme with "Unibody" in Window Style.
 4. In Typora, open "Preferences" (`File` > `Preferences`). And then switch to the Appearance tab and click the "Unibody" button.
 5. Restart Typora and select the **Alto** theme from the theme menu.
 
+
+
+1. 克隆此仓库或从 [Latest Release](https://github.com/Seeridia/typora-theme-alto/releases/latest) 下载 `typora-theme-alto.zip`。
+
+2. 在 Typora 中，打开“偏好设置”（`文件` > `偏好设置`）。然后切换到外观标签并点击“打开主题文件夹”按钮
+
+3. 将 `alto.css` 文件和 `alto` 文件夹复制到 Typora 的主题文件夹中
+
+4. 在 Typora 中，打开“偏好设置”（`文件` > `偏好设置`）。然后切换到外观标签并点击“单体”按钮
+
+5. 重启 Typora，并从主题菜单中选择 **Alto** 主题
+
+   
+
 ## Credits 致谢
 
 - 主题 [Lapis](https://github.com/YiNNx/typora-theme-lapis) 以及 ta 的作者 [YiNN](https://github.com/YiNNx) 
 - 部分界面样式的灵感来源于 [Arc](https://arc.net/) 以及 [Microsoft 365](https://www.microsoft.com/microsoft-365)
 - The theme [Lapis](https://github.com/YiNNx/typora-theme-lapis) and its creator [YiNN](https://github.com/YiNNx)
 - Some interface style inspirations are derived from [Arc](https://arc.net/) and [Microsoft 365](https://www.microsoft.com/microsoft-365)
+
+
 
 ## Notes 说明
 
@@ -46,3 +64,5 @@ Please use this theme with "Unibody" in Window Style.
 - Please consider giving it a star ⭐.
 - I'm just a freshman who recently started college, currently busy with competitions. If there are any issues you want to be fixed quickly, feel free to make adjustments yourself 👍.
 - If you are not familiar with it yet, it's a good time to start learning. I am also a beginner, so there might be some immature code. I appreciate your understanding.
+
+![](./imgs/Header.png)
