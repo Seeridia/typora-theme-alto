@@ -4,8 +4,9 @@
  */
 
 /*
- *     Based on Typora Theme - Lapis    /    Author - YiNN
- *     https: //github.com/YiNNx/typora-theme-lapis
+ *     Based on
+ *     Typora Theme - Lapis   /    Author - YiNN
+ *     https://github.com/YiNNx/typora-theme-lapis
  */
 
 :root {
@@ -76,7 +77,7 @@
 
 /*
  * Alto Style
- * -------------------------
+ * ----------
  */
 
 
@@ -137,6 +138,10 @@ content {
 .file-node-on-edi,
 #file-library-search-input {
     border-radius: 6px;
+}
+
+.file-library-node.file-tree-node.file-library-file-node.active:hover {
+    background-color: #fff;
 }
 
 
@@ -220,6 +225,7 @@ content {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     color: var(--main-color);
+    font-weight: bold;
 }
 
 .megamenu-menu-list li a.active {
@@ -233,7 +239,7 @@ content {
 
 /*
  * Lapis Style
- * -------------------------
+ * -----------
  */
 
 
