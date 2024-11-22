@@ -90,7 +90,7 @@
 content {
     background-color: #fff;
     border-radius: 8px !important;
-    margin:2px 8px 8px 8px;
+    margin: 2px 8px 8px 8px;
 }
 
 content:hover {
@@ -98,7 +98,7 @@ content:hover {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
-.dropdown-menu{
+#context-menu {
     border-radius: 7px;
     border: #d1d6d9 solid 1px;
     background-color: #fff;
