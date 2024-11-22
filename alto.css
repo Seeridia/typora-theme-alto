@@ -39,10 +39,10 @@
     --active-file-bg-color: var(--block-bg-color);
 
     /* Alto Own Color */
-    --content-color: #fff;
-    --main-color: #487dac;
-    --background-color: #e8f4ff;
-    --bg-color: var(--background-color);
+    --alto-content-color: #fff;
+    --alto-main-color: #487dac;
+    --alto-bg-color: #e8f4ff;
+    --bg-color: var(--alto-bg-color);
 }
 
 @media print {
@@ -90,9 +90,21 @@
 content {
     background-color: #fff;
     border-radius: 8px !important;
+    margin:2px 8px 8px 8px;
+}
+
+content:hover {
     margin: 0px 5px 5px 5px;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
 }
+
+.dropdown-menu{
+    border-radius: 7px;
+    border: #d1d6d9 solid 1px;
+    background-color: #fff;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
 
 /*
  * 侧边栏
@@ -101,7 +113,7 @@ content {
 
 
 /* #typora-sidebar {
-    background-color: var(--background-color) !important;
+    background-color: var(--alto-bg-color) !important;
 }
  */
 
@@ -117,6 +129,7 @@ content {
     display: none;
 }
 
+.file-list-item.file-library-node.file-library-file-node.active,
 .file-library-node.file-tree-node.file-library-file-node.active {
     background-color: #fff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.03);
@@ -144,6 +157,17 @@ content {
     background-color: #fff;
 }
 
+.sidebar-footer-item.footer-item-right.footer-btn.file-action-item.not-empty-menu-group.show {
+    padding-top: 0px;
+}
+
+#sidebar-files-menu {
+    border-radius: 7px;
+    margin-bottom: 5px;
+    margin-left: 2px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.03);
+}
 
 /*
  * 一体化菜单
@@ -156,7 +180,7 @@ content {
     font-size: 2rem;
     font-weight: normal;
     margin-bottom: 10px;
-    color: var(--main-color);
+    color: var(--alto-main-color);
 }
 
 #recent-file-panel tbody tr {
@@ -165,7 +189,7 @@ content {
 }
 
 #recent-file-panel tbody tr:hover {
-    background-color: var(--background-color);
+    background-color: var(--alto-bg-color);
 }
 
 .long-btn:last-of-type,
@@ -182,7 +206,7 @@ content {
 
 .megamenu-menu-panel {
     margin-top: 0px !important;
-    border-bottom: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--alto-main-color);
     padding-bottom: 30px;
     padding-top: 30px;
     margin-right: 20px;
@@ -214,22 +238,22 @@ content {
 
 .megamenu-menu-list li a,
 .megamenu-menu-list:not(.saved) li a {
-    border-left: var(--background-color) solid 3px;
+    border-left: var(--alto-bg-color) solid 3px;
     margin-left: 5px;
 }
 
 
 .megamenu-menu-list li a.active,
 .megamenu-menu-list:not(.saved) li a:hover {
-    background-color: var(--background-color);
+    background-color: var(--alto-bg-color);
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
-    color: var(--main-color);
+    color: var(--alto-main-color);
     font-weight: bold;
 }
 
 .megamenu-menu-list li a.active {
-    border-left: #0744ac solid 3px;
+    border-left: var(--alto-main-color) solid 3px;
 }
 
 .megamenu-menu-list:not(.saved) li a:hover {
