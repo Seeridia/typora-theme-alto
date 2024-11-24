@@ -9,6 +9,12 @@
  *     https://github.com/YiNNx/typora-theme-lapis
  */
 
+
+ /* TODO:
+ * 1. 右键菜单样式
+ */
+
+ 
 :root {
     --text-color: #40464f;
     /* Text */
@@ -93,12 +99,14 @@ content {
     margin: 2px 8px 8px 8px;
 }
 
+/* 书写区域鼠标移入的动画 */
 content:hover {
     margin: 0px 5px 5px 5px;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
-#context-menu {
+/* 书写区域与侧边栏的右键菜单 */
+[role="menu"] {
     border-radius: 7px;
     border: #d1d6d9 solid 1px;
     background-color: #fff;
@@ -109,12 +117,6 @@ content:hover {
 /*
  * 侧边栏
  * Sidebar
- */
-
-
-/* #typora-sidebar {
-    background-color: var(--alto-bg-color) !important;
-}
  */
 
 #sidebar-content.sidebar-content {
