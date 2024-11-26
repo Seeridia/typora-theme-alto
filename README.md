@@ -9,9 +9,13 @@
 
 ## Introduce
 
-The theme retains almost all of the writing area styles from [Lapis](https://github.com/YiNNx/typora-theme-lapis) , while Alto significantly adjusts the interface styles.
+**Welcome to the second generation of Alto!**
+
+Alto is born to create a modern and elegant Typora interface, which has fully supported all Typora built-in themes (except for Dark mode) and most third-party themes.
 
 Please use this theme with "Unibody" in Window Style.
+
+Alto v2.0.0 is currently in pre-release.
 
 ## Preview
 

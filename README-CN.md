@@ -2,9 +2,14 @@
 
 ## 简介
 
-Alto 保留了主题 [Lapis](https://github.com/YiNNx/typora-theme-lapis) 几乎所有的样式，在这基础上大幅修改了界面风格
+**Alto 迎来了第二代！**
 
-希望能在 一体化 的窗口样式下使用该主题
+
+Alto 为更现代更优雅的 Typora 界面而生，目前已完全支持 [Lapis](https://github.com/YiNNx/typora-theme-lapis) 以及所有 Typora 内置主题（暂时不含 Dark 模式），其余大部分第三方主题也能得到很好的适配。
+
+请在 “**一体化**” 界面下，使用 Alto
+
+目前 Alto v2.0.0 暂时以 pre-release 的方式发布
 
 ## 预览
 
@@ -31,9 +36,9 @@ Alto 保留了主题 [Lapis](https://github.com/YiNNx/typora-theme-lapis) 几乎
 
 ## 说明
 
-- 由于我做出修改的部分大多都是针对于界面部分，所以你也可以通过很少的修改去将他套在其他主题上，为此，我将界面相关的修改放在了`alto.css`的`Alto Style`中，并将颜色放在了`Alto Own Color`中
 - 给个 star 呗⭐
 - 我只是个刚入学的大一学生，忙着竞赛，如果有什么问题，想更快地被修复，不妨自己改改👍
 - 如果你不会，那请开始学吧，以及，我也是刚开始学的，所以会出现很多不成熟的代码，请谅解
+- 或许会有制作 Alto 自己完整主题的想法，但现在没什么空……
 
 ![](./imgs/Header.png)
