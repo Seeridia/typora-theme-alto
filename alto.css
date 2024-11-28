@@ -64,7 +64,6 @@ html {
     transform: rotate3d(-1, -1, 0, 15deg);
 }
 
-#top-titlebar *,
 #top-titlebar {
     background-color: transparent !important;
 }
@@ -91,12 +90,20 @@ footer.ty-footer {
     border-top-width: 0px;
 }
 
-/* 书写区域与侧边栏的右键菜单 */
+/* 书写区域与侧边栏的右键菜单以及字数统计、拼写检查的样式 */
+#spell-check-panel,
+#footer-word-count-info,
 [role="menu"] {
     border-radius: 7px;
     border: #d1d6d9 solid 1px;
     background-color: #fff;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+#ty-spell-check-panel-item-label {
+    border: #d1d6d9 solid 1px !important;
+    border-radius: 7px;
+    background-color: #fff;
 }
 
 /* 滚动条 */
@@ -193,14 +200,27 @@ footer.ty-footer {
     background-color: transparent;
 }
 
+/* 侧边底栏 */
 #sidebar-files-menu {
     border-radius: 7px;
     border-color: #fff !important;
-    margin-bottom: 5px;
-    margin-left: 2px;
+    margin-bottom: 0.29rem;
+    margin-left: 0.12rem;
     background-color: #fff;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.03);
+    box-shadow: none;
     color: var(--text-color);
+    scale: 0.99;
+    transform-origin: bottom left;
+    transition: scale 0.2s ease, box-shadow 0.3s ease;
+}
+
+#sidebar-files-menu:hover {
+    scale: 1;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-footer-item:hover {
+    background: none;
 }
 
 #ty-tooltip {
@@ -272,11 +292,6 @@ footer.ty-footer {
     background-color: var(--alto-bg-color);
 }
 
-.long-btn:last-of-type,
-.long-btn.do-export-button {
-    border-radius: 6px;
-}
-
 #recent-file-panel-search-input,
 #recent-file-panel-action-btn {
     margin: 12px 0px 0px;
@@ -342,10 +357,15 @@ footer.ty-footer {
     display: none;
 }
 
-/* 打开、导出、主题界面的按钮动画 */
+/* 打开、导出、主题界面的按钮 */
+.long-btn:last-of-type,
+.long-btn.do-export-button {
+    border-radius: 10px;
+}
+
 .long-btn,
 .theme-preview-div {
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     transform: scale(0.98);
 }
 
@@ -362,4 +382,9 @@ header,
 
 #recent-document-table {
     border-radius: 7px;
+}
+
+/* 部分主题的提示 Pandoc 下载没有高亮 */
+.open-pandoc-guide {
+    color: var(--alto-main-color) !important;
 }
