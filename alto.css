@@ -2,10 +2,23 @@
  *     Typora Theme - Alto    /    Author - Seeridia
  *     https://github.com/Seeridia/typora-theme-alto
  *     
- *     Version - 2.0.0-beta.1
+ *     Version - 2.0.0-beta.2
  */
 
+
+/*
+ * 主题配置 / Theme Configuration
+*/
+
 @import "lapis.css";
+
+:root {
+
+    --alto-accent-color: #487dac;
+    --alto-main-color: #e8f4ff;
+
+}
+
 
 /* 
  * 说明 / Instructions
@@ -15,9 +28,9 @@ Choose your favorite theme and apply the Alto interface!
 
 @import "github.css";
 @import "newsprint.css";
-@import "night.css";
 @import "whitey.css";
 @import "pixyll.css";
+@import "alto/lapis.css";
 
 默认是 Lapis 主题，你可以在上面的代码中选择你喜欢的主题，然后替换上方的 '@import "lapis.css";' ，重启 Typora 即可。
 The default is Lapis theme, you can choose your favorite theme from the code above and replace '@import "lapis.css";' with the theme you like, then restart Typora.
@@ -26,33 +39,51 @@ The default is Lapis theme, you can choose your favorite theme from the code abo
 Other third-party themes can be downloaded and replaced with the code above, but they may not be fully adapted, please test them by yourself.
 You can also request the adaptation by submitting an issue or submitting a PR to contribute code.
 
-Enjoy!
-
 */
 
 /* 
  * 参考颜色 / Reference color
 
-目前仅有一直蓝色，其他颜色正在找......
-Current only has a blue color, other colors are being found...
+--alto-accent-color 强调色
+--alto-main-color 侧边栏颜色
 
-Blue 蓝
---alto-main-color: #487dac;
---alto-bg-color: #e8f4ff;
+你可以根据第三方主题和你的喜好来决定颜色，这里也给出参考颜色。
+You can choose the color based on the third-party theme and your preference. Here are some reference colors.
+
+更多颜色正在寻找...
+More colors are being sought...
+
+ * Blue 蓝
+--alto-accent-color: #487dac;
+--alto-main-color: #e8f4ff;
+
+ * Pink 粉
+--alto-accent-color: #d49fc3;
+--alto-main-color: #ffe7f0;
 
 */
 
-:root {
+/*
+ * 对于主动修改第三方主题颜色 / For modifying the color of third-party themes
 
-    /* Alto Own Color */
-    --alto-main-color: #487dac;
-    --alto-bg-color: #e8f4ff;
+如果你想仅修改第三方主题颜色去搭配 Alto 主题，不妨去相应主题的css文件里找找颜色变量。
+If you want to modify only the color of the third-party theme to match Alto,
+you can look for the color variable in the CSS file of the corresponding theme.
+
+以 Lapis 主题为例，你可以在下方的 `:root` 中添加以下代码以修改颜色：
+
+--primary-color: var(--alto-accent-color);
+--bg-color: var(--alto-main-color);
+
+*/
+
+
+:root {
     --alto-content-color: #fff;
-    --bg-color: var(--alto-bg-color);
 }
 
 html {
-    background-color: var(--alto-bg-color);
+    background-color: var(--alto-main-color);
 }
 
 /*
@@ -72,12 +103,12 @@ content {
     background-color: var(--alto-content-color);
     border-radius: 8px !important;
     margin: 2px 8px 8px 8px;
-
 }
 
 /* 书写区域鼠标移入的动画 */
 content:hover {
     margin: 0px 5px 5px 5px;
+
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
@@ -113,6 +144,10 @@ footer.ty-footer {
 
 #write {
     margin-bottom: 0px;
+}
+
+footer.stopselect.ty-footer {
+    background-color: transparent;
 }
 
 /*
@@ -175,7 +210,7 @@ footer.ty-footer {
 }
 
 .file-node-icon.fa.fa-folder {
-    color: var(--alto-main-color);
+    color: var(--alto-accent-color);
 }
 
 .file-node-on-edi,
@@ -219,6 +254,15 @@ footer.ty-footer {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
+/* 侧边栏最近任务展开图标 */
+.ty-side-sort-btn.active {
+    color: var(--alto-accent-color);
+}
+
+.selected-folder-menu-item a:after {
+    color: var(--alto-accent-color);
+}
+
 .sidebar-footer-item:hover {
     background: none;
 }
@@ -243,8 +287,8 @@ footer.ty-footer {
 }
 
 .dropdown-menu>li>a:hover {
-    background: #f9fffd;
-    border-radius: 7px;
+    background: var(--alto-main-color);
+    border-radius: 4px;
 }
 
 /*
@@ -280,7 +324,7 @@ footer.ty-footer {
     font-size: 2rem;
     font-weight: normal;
     margin-bottom: 10px;
-    color: var(--alto-main-color);
+    color: var(--alto-accent-color);
 }
 
 #recent-file-panel tbody tr {
@@ -289,7 +333,7 @@ footer.ty-footer {
 }
 
 #recent-file-panel tbody tr:hover {
-    background-color: var(--alto-bg-color);
+    background-color: var(--alto-main-color);
 }
 
 #recent-file-panel-search-input,
@@ -301,7 +345,7 @@ footer.ty-footer {
 
 .megamenu-menu-panel {
     margin-top: 0px !important;
-    border-bottom: 1px solid var(--alto-main-color);
+    border-bottom: 1px solid var(--alto-accent-color);
     padding-bottom: 30px;
     padding-top: 30px;
     margin-right: 20px;
@@ -341,12 +385,12 @@ footer.ty-footer {
     background-color: transparent;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
-    color: var(--alto-main-color);
+    color: var(--alto-accent-color);
     font-weight: bold;
 }
 
 .megamenu-menu-list li a.active {
-    border-left: var(--alto-main-color) solid 3px;
+    border-left: var(--alto-accent-color) solid 3px;
 }
 
 .megamenu-menu-list:not(.saved) li a:hover {
@@ -377,7 +421,7 @@ footer.ty-footer {
 header,
 #megamenu-content {
     background-image: none !important;
-    background-color: var(--alto-bg-color);
+    background-color: var(--alto-main-color) !important;
 }
 
 #recent-document-table {
@@ -386,5 +430,5 @@ header,
 
 /* 部分主题的提示 Pandoc 下载没有高亮 */
 .open-pandoc-guide {
-    color: var(--alto-main-color) !important;
+    color: var(--alto-accent-color) !important;
 }

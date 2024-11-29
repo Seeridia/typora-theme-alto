@@ -1,5 +1,9 @@
 <img src=".\imgs\Logo.png" style="zoom:12%;" alt="Typora Theme Alto"/>
 
+> [!NOTE]
+> 目前 Alto v2 暂时以 [Pre-release]((https://github.com/Seeridia/typora-theme-alto/releases)) 的方式发布，目前项目主分支即为 v2-beta
+> 如需使用 Alto v1 可以前往 [Releases](https://github.com/Seeridia/typora-theme-alto/releases/latest) 下载
+
 ## 简介
 
 **Alto 迎来了第二代！**
@@ -8,8 +12,6 @@
 Alto 为更现代更优雅的 Typora 界面而生，目前已完全支持 [Lapis](https://github.com/YiNNx/typora-theme-lapis) 以及所有 Typora 内置主题（暂时不含 Dark 模式），其余大部分第三方主题也能得到很好的适配。
 
 请在 “**一体化**” 界面下，使用 Alto
-
-目前 Alto v2.0.0 暂时以 pre-release 的方式发布
 
 ## 预览
 
@@ -42,3 +44,9 @@ Alto 为更现代更优雅的 Typora 界面而生，目前已完全支持 [Lapis
 - 或许会有制作 Alto 自己完整主题的想法，但现在没什么空……
 
 ![](./imgs/Header.png)
+
+## 主题支持与颜色
+
+| 主题 | 颜色 |
+| --- | --- |
+| [Lapis](https://github.com/YiNNx/typora-theme-lapis) | 

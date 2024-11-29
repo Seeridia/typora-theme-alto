@@ -7,6 +7,10 @@
 	</a>
 </p>
 
+> [!NOTE]  
+> Currently, Alto v2 is released as a [Pre-release](https://github.com/Seeridia/typora-theme-alto/releases), with the main branch of the project being v2-beta.
+> If you need to use Alto v1, you can download it from the [Releases](https://github.com/Seeridia/typora-theme-alto/releases/latest) page.
+
 ## Introduce
 
 **Welcome to the second generation of Alto!**
