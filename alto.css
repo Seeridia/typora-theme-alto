@@ -6,22 +6,16 @@
  */
 
 
-/*
- * 主题配置 / Theme Configuration
-*/
+
+/* 
+ * 主题 配置 / Theme Configuration
+ * -----------------------------
+ */
 
 @import "lapis.css";
 
-:root {
-
-    --alto-accent-color: #487dac;
-    --alto-main-color: #e8f4ff;
-
-}
-
-
 /* 
- * 说明 / Instructions
+ * 导入主题 / Import Theme
 
 选择你喜欢的主题，套用 Alto 的界面吧！
 Choose your favorite theme and apply the Alto interface!
@@ -41,45 +35,48 @@ You can also request the adaptation by submitting an issue or submitting a PR to
 
 */
 
+:root {
+
+    --alto-accent-color: #487dac;
+    --alto-main-color: #e8f4ff;
+
+    /* 
+     * 参考颜色 / Reference color
+    
+    --alto-accent-color 强调色
+    --alto-main-color 侧边栏颜色
+    
+    你可以根据第三方主题和你的喜好来决定颜色，这里也给出参考颜色。
+    You can choose the color based on the third-party theme and your preference. Here are some reference colors.
+    
+    更多颜色正在寻找...
+    More colors are being sought...
+    
+     * Blue 蓝
+    --alto-accent-color: #487dac;
+    --alto-main-color: #e8f4ff;
+    
+     * Pink 粉
+    --alto-accent-color: #d49fc3;
+    --alto-main-color: #ffe7f0;
+    
+     * Green 绿
+    --alto-accent-color: #077123;
+    --alto-main-color: #f2fff6;
+    
+    */
+
+}
+
+
 /* 
- * 参考颜色 / Reference color
-
---alto-accent-color 强调色
---alto-main-color 侧边栏颜色
-
-你可以根据第三方主题和你的喜好来决定颜色，这里也给出参考颜色。
-You can choose the color based on the third-party theme and your preference. Here are some reference colors.
-
-更多颜色正在寻找...
-More colors are being sought...
-
- * Blue 蓝
---alto-accent-color: #487dac;
---alto-main-color: #e8f4ff;
-
- * Pink 粉
---alto-accent-color: #d49fc3;
---alto-main-color: #ffe7f0;
-
-*/
-
-/*
- * 对于主动修改第三方主题颜色 / For modifying the color of third-party themes
-
-如果你想仅修改第三方主题颜色去搭配 Alto 主题，不妨去相应主题的css文件里找找颜色变量。
-If you want to modify only the color of the third-party theme to match Alto,
-you can look for the color variable in the CSS file of the corresponding theme.
-
-以 Lapis 主题为例，你可以在下方的 `:root` 中添加以下代码以修改颜色：
-
---primary-color: var(--alto-accent-color);
---bg-color: var(--alto-main-color);
-
-*/
-
+ * Alto 配置 / Alto Configuration
+ * -----------------------------
+ */
 
 :root {
     --alto-content-color: #fff;
+    --alto-text-color: #40464f;
 }
 
 html {
@@ -158,7 +155,7 @@ footer.stopselect.ty-footer {
 /* 侧边栏主颜色 */
 #typora-sidebar {
     background-color: transparent;
-    color: var(--text-color);
+    color: var(--alto-text-color);
 }
 
 #sidebar-content.sidebar-content {
@@ -174,11 +171,44 @@ footer.stopselect.ty-footer {
     display: none;
 }
 
-.file-list-item.file-library-node.file-library-file-node.active,
-.file-library-node.file-tree-node.file-library-file-node.active {
-    background-color: #fff;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.03);
+/* 文件未被选中 */
+.file-library-node.file-tree-node.file-library-file-node {
     border-radius: 6px;
+    border: 1.5px solid transparent;
+    transform: scale(1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease, border 0.3s ease !important;
+}
+
+/* 文件被悬停 */
+.file-library-node.file-tree-node.file-library-file-node:hover {
+    transform: scale(0.98);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
+    border: 1.5px solid var(--alto-accent-color);
+}
+
+/* 文件被选中但鼠标不在侧边栏 */
+.file-library-node.file-tree-node.file-library-file-node.active {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+}
+
+/* 文件被选中且被悬浮 */
+.file-library-node.file-tree-node.file-library-file-node.active:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+}
+
+/* 文件被选中但鼠标在侧边栏 */
+#file-library:hover .file-library-node.file-tree-node.file-library-file-node.active {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
+    border: 1.5px solid var(--alto-accent-color);
+    background-color: #fff;
+}
+
+/* 删除拖动时的虚线边框 */
+.file-library-node:not(.file-node-root):focus>.file-node-content {
+    outline: none;
 }
 
 .active-tab-files #info-panel-tab-file .info-panel-tab-border,
@@ -201,7 +231,7 @@ footer.stopselect.ty-footer {
 }
 
 .file-node-content {
-    color: var(--text-color) !important;
+    color: var(--alto-text-color) !important;
     line-height: 2.1rem;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -218,10 +248,6 @@ footer.stopselect.ty-footer {
     border-radius: 6px;
 }
 
-.file-library-node.file-tree-node.file-library-file-node.active:hover {
-    background-color: #fff;
-}
-
 .file-library-node.file-tree-node.file-library-file-node:hover {
     background-color: #f9fbff;
     border-radius: 6px;
@@ -235,6 +261,11 @@ footer.stopselect.ty-footer {
     background-color: transparent;
 }
 
+#typora-sidebar #sidebar-content .sidebar-content-content .file-tree-node:not(.file-node-root):hover>.file-node-background {
+    border: none;
+    background-color: transparent;
+}
+
 /* 侧边底栏 */
 #sidebar-files-menu {
     border-radius: 7px;
@@ -243,7 +274,7 @@ footer.stopselect.ty-footer {
     margin-left: 0.12rem;
     background-color: #fff;
     box-shadow: none;
-    color: var(--text-color);
+    color: var(--alto-text-color);
     scale: 0.99;
     transform-origin: bottom left;
     transition: scale 0.2s ease, box-shadow 0.3s ease;
@@ -269,10 +300,10 @@ footer.stopselect.ty-footer {
 
 #ty-tooltip {
     border-radius: 5px;
-    border-color: #fff !important;
+    border-color: var(--alto-accent-color) !important;
     background-color: #fff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.03);
-    color: var(--text-color);
+    color: var(--alto-text-color);
 }
 
 footer.ty-footer {
@@ -283,12 +314,84 @@ footer.ty-footer {
 .sidebar-menu .dropdown-menu>li>a,
 .sidebar-menu .dropdown-menu>li>a:focus,
 .sidebar-menu .dropdown-menu>li>a:hover {
-    color: var(--text-color);
+    color: var(--alto-text-color);
 }
 
 .dropdown-menu>li>a:hover {
     background: var(--alto-main-color);
     border-radius: 4px;
+}
+
+/* 侧边栏 大纲 */
+/* 大纲 参考了 Phycat 主题样式 */
+
+#outline-content .outline-h1>.outline-item {
+    font-size: larger;
+    font-weight: bold;
+    color: var(--alto-accent-color);
+}
+
+#outline-content .outline-h1:not(:first-of-type)>.outline-item {
+    margin-top: 10px;
+}
+
+#outline-content .outline-h2>.outline-item::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    color: var(--alto-accent-color);
+    border-color: var(--alto-accent-color) !important;
+    vertical-align: middle;
+    float: left;
+    margin-top: -2px;
+    margin-right: 11px;
+    margin-left: -24px;
+    border-radius: 100%;
+    border: 3px solid #fff;
+    z-index: 100;
+    position: relative;
+    top: 8px;
+    left: 8px;
+}
+
+#outline-content .outline-h2::after {
+    content: "";
+    height: calc(100% - 24px);
+    width: 1px;
+    color: var(--alto-accent-color);
+    position: absolute;
+    left: 3px;
+    top: 21px;
+}
+
+#outline-content .outline-h2>.outline-item:last-child:after {
+    display: none;
+}
+
+#outline-content .outline-h2>.outline-item>.outline-label {
+    line-height: 1.65rem;
+    margin: 0;
+}
+
+#outline-content .outline-h2>.outline-item {
+    margin-bottom: -3px;
+}
+
+#outline-content .outline-h3>.outline-item>.outline-label {
+    border-left: 2px solid var(--alto-accent-color);
+    padding-left: 8px;
+}
+
+.outline-item-active:not(.outline-item-wrapper)::after {
+    content: "";
+    position: relative;
+    width: 11px;
+    height: 8px;
+    background: var(--alto-accent-color);
+    float: right;
+    top: -12px;
+    z-index: 100;
+    border-radius: 40% 20% 20% 40%;
 }
 
 /*
@@ -311,7 +414,7 @@ footer.ty-footer {
 .megamenu-menu-header-title-menu,
 .megamenu-menu-header-title-back {
     background-color: transparent;
-    color: var(--text-color);
+    color: var(--alto-text-color);
 }
 
 .megamenu-menu-header {
@@ -401,6 +504,19 @@ footer.ty-footer {
     display: none;
 }
 
+#megamenu-menu-sidebar #megamenu-menu-list li a {
+    color: var(--alto-text-color) !important;
+}
+
+#megamenu-menu-list {
+    background-color: inherit !important;
+}
+
+#megamenu-menu-sidebar #megamenu-menu-list li a.active,
+#megamenu-menu-sidebar #megamenu-menu-list li a:hover {
+    background-color: inherit !important;
+}
+
 /* 打开、导出、主题界面的按钮 */
 .long-btn:last-of-type,
 .long-btn.do-export-button {
@@ -431,4 +547,9 @@ header,
 /* 部分主题的提示 Pandoc 下载没有高亮 */
 .open-pandoc-guide {
     color: var(--alto-accent-color) !important;
+}
+
+/* 不再限制主题页的宽度 */
+#theme-preview-grid {
+    max-width: none;
 }
