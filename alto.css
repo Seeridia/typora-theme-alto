@@ -523,8 +523,10 @@ footer.ty-footer {
     border-radius: 10px;
 }
 
-.long-btn,
+.theme-preview-content,
 .theme-preview-div {
+    width: 10rem;
+    margin-right: 2rem;
     transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     transform: scale(0.98);
 }
@@ -532,6 +534,16 @@ footer.ty-footer {
 .long-btn:hover,
 .theme-preview-div:hover {
     transform: scale(1);
+}
+
+.theme-preview-div:hover,
+.theme-preview-div.active {
+    border-color: var(--alto-accent-color);
+}
+
+.theme-preview-div.active > .theme-preview-content,
+.theme-preview-div.active {
+    width: 22rem;
 }
 
 header,
