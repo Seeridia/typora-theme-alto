@@ -8,7 +8,7 @@
 </p>
 
 > [!NOTE]
-> 请不要直接在上面下载该项目！请阅读下面的 [安装](##安装-installation) 和 [配置](##配置-configuration) 部分！
+> 请不要直接在上面下载该项目！请阅读下面的 [安装](#安装-installation) 和 [配置](#配置-configuration) 部分！
 > Please do not download the project directly! Please read the [README-EN](README-EN.md)
 
 ## 简介 Introduction

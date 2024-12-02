@@ -1,7 +1,7 @@
 ![Typora-Theme-Alto](./imgs/Logo.png)
 
 > [!NOTE]
-> Please do not download the project directly! Please read the [Installation](##installation) and [Configuration](##configuration) sections below!
+> Please do not download the project directly! Please read the [Installation](#installation) and [Configuration](#configuration) sections below!
 
 ## Introduction
 
