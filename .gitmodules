@@ -1,0 +1,6 @@
+[submodule "alto/lapis"]
+	path = alto/lapis
+	url = https://github.com/YiNNx/typora-theme-lapis.git
+[submodule "alto/spring"]
+	path = alto/spring
+	url = https://github.com/SprInec/typora-spring-theme.git
