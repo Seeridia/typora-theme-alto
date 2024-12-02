@@ -12,7 +12,7 @@
  * -----------------------------
  */
 
-@import "lapis.css";
+@import "alto/lapis/lapis.css";
 
 /* 
  * 导入主题 / Import Theme
@@ -20,11 +20,18 @@
 选择你喜欢的主题，套用 Alto 的界面吧！
 Choose your favorite theme and apply the Alto interface!
 
+
+--- Typora 内置主题 / Built-in themes ---
 @import "github.css";
 @import "newsprint.css";
 @import "whitey.css";
 @import "pixyll.css";
-@import "alto/lapis.css";
+
+--- 第三方主题 / Third-party themes ---
+
+@import "alto/lapis/lapis.css";
+@import "alto/spring/spring.css";
+
 
 默认是 Lapis 主题，你可以在上面的代码中选择你喜欢的主题，然后替换上方的 '@import "lapis.css";' ，重启 Typora 即可。
 The default is Lapis theme, you can choose your favorite theme from the code above and replace '@import "lapis.css";' with the theme you like, then restart Typora.
@@ -139,6 +146,20 @@ footer.ty-footer {
     width: 0.5rem;
 }
 
+/* 设置界面不显示滚动条 */
+#megamenu-content::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0000001c !important;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
 #write {
     margin-bottom: 0px;
 }
@@ -151,6 +172,11 @@ footer.stopselect.ty-footer {
  * 侧边栏
  * Sidebar
  */
+
+
+#file-library-search-input:focus {
+    border-color: var(--alto-accent-color);
+}
 
 /* 侧边栏主颜色 */
 #typora-sidebar {
@@ -439,13 +465,6 @@ footer.ty-footer {
     background-color: var(--alto-main-color);
 }
 
-#recent-file-panel-search-input,
-#recent-file-panel-action-btn {
-    margin: 12px 0px 0px;
-    border-radius: 6px;
-    background-color: #fff;
-}
-
 .megamenu-menu-panel {
     margin-top: 0px !important;
     border-bottom: 1px solid var(--alto-accent-color);
@@ -518,9 +537,37 @@ footer.ty-footer {
 }
 
 /* 打开、导出、主题界面的按钮 */
-.long-btn:last-of-type,
-.long-btn.do-export-button {
+.long-btn {
     border-radius: 10px;
+    border: 1px solid #888;
+    transform: scale(0.98);
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.long-btn:hover {
+    transform: scale(0.99);
+    box-shadow: 0 0 0 1.5px var(--alto-accent-color);
+}
+
+.theme-preview-div:hover {
+    transform: scale(1);
+}
+
+#recent-file-panel-search-input,
+#recent-file-panel-action-btn {
+    margin: 12px 0px 0px;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+#recent-file-panel-search-input:focus {
+    border-color: var(--alto-accent-color);
+}
+
+#recent-document-table {
+    border-collapse: collapse;
 }
 
 .theme-preview-content,
@@ -531,17 +578,12 @@ footer.ty-footer {
     transform: scale(0.98);
 }
 
-.long-btn:hover,
-.theme-preview-div:hover {
-    transform: scale(1);
-}
-
 .theme-preview-div:hover,
 .theme-preview-div.active {
     border-color: var(--alto-accent-color);
 }
 
-.theme-preview-div.active > .theme-preview-content,
+.theme-preview-div.active>.theme-preview-content,
 .theme-preview-div.active {
     width: 22rem;
 }

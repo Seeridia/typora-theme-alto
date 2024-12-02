@@ -1,50 +1,53 @@
 <img src=".\imgs\Logo.png" style="zoom:12%;" alt="Typora Theme Alto"/>
 
-<p align="right">
-	English / 
-	<a href="https://github.com/Seeridia/typora-theme-alto/blob/main/README-CN.md">
-    简体中文
-	</a>
-</p>
+## 简介 Introduction
 
-> [!NOTE]  
-> Currently, Alto v2 is released as a [Pre-release](https://github.com/Seeridia/typora-theme-alto/releases), with the main branch of the project being v2-beta.
-> If you need to use Alto v1, you can download it from the [Releases](https://github.com/Seeridia/typora-theme-alto/releases/latest) page.
+Alto 为更优雅的 Typora 界面而生，她不改动原主题的基础样式，而是对 Typora 界面进行了重新设计，使其更加简洁、美观、灵动。
 
-## Introduce
+Alto is born to create a more elegant Typora interface. It does not change the basic style of the original theme, but redesigns the Typora interface to make it more simple, beautiful, and lively.
 
-**Welcome to the second generation of Alto!**
+> [!NOTE]
+> 请在 “**一体化**” 界面下，使用 Alto
+> Please use Alto in the “**Unibody**” interface.
 
-Alto is born to create a modern and elegant Typora interface, which has fully supported all Typora built-in themes (except for Dark mode) and most third-party themes.
+## 预览 Preview
 
-Please use this theme with "Unibody" in Window Style.
+![Alto on Spring theme](./imgs/Preview1.png)
 
-Alto v2.0.0 is currently in pre-release.
+![Alto on Lapis theme](./imgs/Preview2.png)
 
-## Preview
+![](./imgs/Preview3.png)
 
-![](./imgs/Preview1.png)
+![](./imgs/Preview4.png)
 
-![](./imgs/Preview2.png)
+## 安装
 
-## Installation
+1. 克隆此仓库或从 [Latest Release](https://github.com/Seeridia/typora-theme-alto/releases/latest) 下载 `typora-theme-alto.zip`。
 
-1. Clone this repository or download `typora-theme-alto.zip` from [Latest Release](https://github.com/Seeridia/typora-theme-alto/releases/latest).
-2. In Typora, open "Preferences" (`File` > `Preferences`). And then switch to the Appearance tab and click the "Open Theme Folder" button.
-3. Copy the `alto.css` files and the `alto` folder into Typora's theme folder.
-4. In Typora, open "Preferences" (`File` > `Preferences`). And then switch to the Appearance tab and click the "Unibody" button.
-5. Restart Typora and select the **Alto** theme from the theme menu.
+2. 在 Typora 中，打开“偏好设置”（`文件` > `偏好设置`）。然后切换到外观标签并点击“打开主题文件夹”按钮
 
-## Credits
+3. 将 `alto.css` 文件和 `alto` 文件夹复制到 Typora 的主题文件夹中
 
-- The theme [Lapis](https://github.com/YiNNx/typora-theme-lapis) and its creator [YiNN](https://github.com/YiNNx)
-- Some interface style inspirations are derived from [Arc](https://arc.net/) and [Microsoft 365](https://www.microsoft.com/microsoft-365)
+4. 在 Typora 中，打开“偏好设置”（`文件` > `偏好设置`）。然后切换到外观标签并点击“一体化”按钮
 
-## Notes
+5. 重启 Typora，并从主题菜单中选择 **Alto** 主题
 
-- Since most of my modifications focus on the interface, you can easily apply them to other themes with minimal changes. To facilitate this, I have organized the interface-related changes under `Alto Style` in `alto.css` and placed the color settings under `Alto Own Color`.
-- Please consider giving it a star ⭐.
-- I'm just a freshman who recently started college, currently busy with competitions. If there are any issues you want to be fixed quickly, feel free to make adjustments yourself 👍.
-- If you are not familiar with it yet, it's a good time to start learning. I am also a beginner, so there might be some immature code. I appreciate your understanding.
+## 致谢
+
+- 主题 [Lapis](https://github.com/YiNNx/typora-theme-lapis) 以及 ta 的作者 [YiNN](https://github.com/YiNNx) 
+- 部分界面样式的灵感来源于 [Arc](https://arc.net/) 以及 [Microsoft 365](https://www.microsoft.com/microsoft-365)
+
+## 说明
+
+- 给个 star 呗⭐
+- 我只是个刚入学的大一学生，忙着竞赛，如果有什么问题，想更快地被修复，不妨自己改改👍
+- 如果你不会，那请开始学吧，以及，我也是刚开始学的，所以会出现很多不成熟的代码，请谅解
+- 或许会有制作 Alto 自己完整主题的想法，但现在没什么空……
 
 ![](./imgs/Header.png)
+
+## 主题支持与颜色
+
+| 主题 | 颜色 |
+| --- | --- |
+| [Lapis](https://github.com/YiNNx/typora-theme-lapis) | 
