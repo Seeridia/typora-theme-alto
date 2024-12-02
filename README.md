@@ -1,14 +1,14 @@
-<img src=".\imgs\Logo.png" style="zoom:12%;" alt="Typora Theme Alto"/>
+![Alto](./imgs/Logo.png)
+
+> [!NOTE]
+> 请不要直接在上面下载该项目！请阅读下面的 [安装](## 安装 Installation) 和 [配置](## 配置 Configuration) 部分！
 
 ## 简介 Introduction
 
 Alto 为更优雅的 Typora 界面而生，她不改动原主题的基础样式，而是对 Typora 界面进行了重新设计，使其更加简洁、美观、灵动。
 
-Alto is born to create a more elegant Typora interface. It does not change the basic style of the original theme, but redesigns the Typora interface to make it more simple, beautiful, and lively.
-
 > [!NOTE]
 > 请在 “**一体化**” 界面下，使用 Alto
-> Please use Alto in the “**Unibody**” interface.
 
 ## 预览 Preview
 
@@ -20,34 +20,52 @@ Alto is born to create a more elegant Typora interface. It does not change the b
 
 ![](./imgs/Preview4.png)
 
-## 安装
+## 安装 Installation
 
-1. 克隆此仓库或从 [Latest Release](https://github.com/Seeridia/typora-theme-alto/releases/latest) 下载 `typora-theme-alto.zip`。
+该项目主体是 `alto.css` ，上面的预览所内置的主题是 [YiNNx](https://github.com/YiNNx) 的 [Lapis](https://github.com/YiNNx/typora-theme-lapis) 和 [SprInec](https://github.com/SprInec) 的 [Spring](https://github.com/SprInec/typora-spring-theme) ，他们以子模块的形式放在了文件夹 `alto` 中，所以如果你直接下载的该项目的 zip 文件，这两个模块并不会一起下载下来，你需要单独下载，或者采用我下面给出的方式。
 
-2. 在 Typora 中，打开“偏好设置”（`文件` > `偏好设置`）。然后切换到外观标签并点击“打开主题文件夹”按钮
+1. 方式一：克隆该项目及其子模块【推荐】
+   1. 确保你安装了 Git 。
+   
+   2. 在 Typora 的主题文件夹中打开终端，输入以下命令：
+   
+      ```
+      git clone --recurse-submodules https://github.com/Seeridia/typora-theme-alto.git .
+      ```
+   
+2. 方式二：从该项目的 [releases](https://github.com/Seeridia/typora-theme-alto/releases) 下载 zip 文件，然后解压到 Typora 的主题文件夹中
+   
+   [releases](https://github.com/Seeridia/typora-theme-alto/releases) 里的打包好的文件一般会包含 [Lapis](https://github.com/YiNNx/typora-theme-lapis) 和 [Spring](https://github.com/SprInec/typora-spring-theme)
 
-3. 将 `alto.css` 文件和 `alto` 文件夹复制到 Typora 的主题文件夹中
+## 配置 Configuration
 
-4. 在 Typora 中，打开“偏好设置”（`文件` > `偏好设置`）。然后切换到外观标签并点击“一体化”按钮
+1. 在 `偏好设置 > 外观 > 窗口样式` 为 “一体化” 模式，关闭 Typora
 
-5. 重启 Typora，并从主题菜单中选择 **Alto** 主题
+2. 打开文件 `alto.css`
 
-## 致谢
+3. 配置 Alto
 
-- 主题 [Lapis](https://github.com/YiNNx/typora-theme-lapis) 以及 ta 的作者 [YiNN](https://github.com/YiNNx) 
-- 部分界面样式的灵感来源于 [Arc](https://arc.net/) 以及 [Microsoft 365](https://www.microsoft.com/microsoft-365)
-
-## 说明
-
-- 给个 star 呗⭐
-- 我只是个刚入学的大一学生，忙着竞赛，如果有什么问题，想更快地被修复，不妨自己改改👍
-- 如果你不会，那请开始学吧，以及，我也是刚开始学的，所以会出现很多不成熟的代码，请谅解
-- 或许会有制作 Alto 自己完整主题的想法，但现在没什么空……
+   1. `@import "alto/lapis/lapis.css";`  配置主题
+   
+      - 对 Lapis 和 Spring ，默认位置为 `alto/xxx/xxx.css` 
+      - 对 Typora 主题 或其他你已经下载好的主题，位置为 `xxx.css`
+   
+   2. `:root`  配置颜色
+   
+      - 目前有几组推荐颜色，已经放在 `alto.css` 的注释中，你可以根据自己的喜好选择，也可以自己添加更多颜色，更欢迎你为配色贡献代码！
+   
+      - 而对于 [Lapis](https://github.com/YiNNx/typora-theme-lapis) 和 [Spring](https://github.com/SprInec/typora-spring-theme) 给出了以下颜色推荐
+   
+        ```css
+        /* Blue 蓝 : Lapis */
+        --alto-accent-color: #487dac;
+        --alto-main-color: #e8f4ff;
+        
+        /* Green 绿 : Spring */
+        --alto-accent-color: #077123;
+        --alto-main-color: #f2fff6;
+        ```
+   
+   3. Enjoy Alto!
 
 ![](./imgs/Header.png)
-
-## 主题支持与颜色
-
-| 主题 | 颜色 |
-| --- | --- |
-| [Lapis](https://github.com/YiNNx/typora-theme-lapis) | 
