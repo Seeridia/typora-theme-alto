@@ -30,8 +30,18 @@ The main file of this project is `alto.css`. The built-in themes in the above pr
    
    2. Open a terminal in Typora's theme folder and enter the following command:
    
-      ```
-      git clone --recurse-submodules https://github.com/Seeridia/typora-theme-alto.git .
+      ```powershell
+      git clone --recurse-submodules https://github.com/Seeridia/typora-theme-alto.git temp_folder
+      
+      Get-ChildItem -Path 'temp_folder' -Force | ForEach-Object {
+          $destination = Join-Path -Path '.' -ChildPath $_.Name
+          if (Test-Path $destination) {
+              Remove-Item -Path $destination -Recurse -Force
+          }
+          Move-Item -Path $_.FullName -Destination '.' -Force
+      }
+      
+      Remove-Item -Path 'temp_folder' -Recurse -Force
       ```
    
 2. Method 2: Download the zip file from the project's [releases](https://github.com/Seeridia/typora-theme-alto/releases) and extract it into Typora's theme folder.

@@ -9,6 +9,7 @@
 
 > [!NOTE]
 > 请不要直接在上面下载该项目！请阅读下面的 [安装](#安装-installation) 和 [配置](#配置-configuration) 部分！
+>
 > Please do not download the project directly! Please read the [README-EN](README-EN.md)
 
 ## 简介 Introduction
@@ -36,10 +37,20 @@ Alto 是个 `css` 文件，以引用其他主题的文件来为其提供更好�
 1. 方式一：克隆该项目及其子模块【推荐】
    1. 确保你安装了 Git 。
    
-   2. 在 Typora 的主题文件夹中打开终端，输入以下命令：
+   2. 在随便一个空文件夹中打开终端，输入以下命令：
    
-      ```
-      git clone --recurse-submodules https://github.com/Seeridia/typora-theme-alto.git .
+      ```powershell
+      git clone --recurse-submodules https://github.com/Seeridia/typora-theme-alto.git temp_folder
+      
+      Get-ChildItem -Path 'temp_folder' -Force | ForEach-Object {
+          $destination = Join-Path -Path '.' -ChildPath $_.Name
+          if (Test-Path $destination) {
+              Remove-Item -Path $destination -Recurse -Force
+          }
+          Move-Item -Path $_.FullName -Destination '.' -Force
+      }
+      
+      Remove-Item -Path 'temp_folder' -Recurse -Force
       ```
    
 2. 方式二：从该项目的 [releases](https://github.com/Seeridia/typora-theme-alto/releases) 下载 zip 文件，然后解压到 Typora 的主题文件夹中
