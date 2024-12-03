@@ -37,7 +37,7 @@ Alto 是个 `css` 文件，以引用其他主题的文件来为其提供更好�
 1. 方式一：克隆该项目及其子模块【推荐】
    1. 确保你安装了 Git 。
    
-   2. 在随便一个空文件夹中打开终端，输入以下命令：
+   2. 在 typora 主题文件夹 中打开终端，输入以下命令：
    
       ```powershell
       git clone --recurse-submodules https://github.com/Seeridia/typora-theme-alto.git temp_folder
