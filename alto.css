@@ -695,7 +695,8 @@ header,
 }
 
 button.btn.btn-primary.btn-sm.dropdown-toggle.dropdown-toggle-split {
-    background-color: transparent;
+    background-color: white;
+    color: var(--alto-accent-color);
 }
 
 .md-notification-container .md-notification-content {
