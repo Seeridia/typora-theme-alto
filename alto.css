@@ -2,7 +2,7 @@
  *     Typora Theme - Alto    /    Author - Seeridia
  *     https://github.com/Seeridia/typora-theme-alto
  *     
- *     Version - 2.0.0-beta.2
+ *     Version - 2.0.1
  */
 
 
@@ -108,7 +108,6 @@ content {
 /* 书写区域鼠标移入的动画 */
 content:hover {
     margin: 0px 5px 5px 5px;
-
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
@@ -164,11 +163,15 @@ footer.stopselect.ty-footer {
     background-color: transparent;
 }
 
+/* Code Mode 下的背景 */
+#typora-source {
+    background-color: transparent;
+}
+
 /*
  * 侧边栏
  * Sidebar
  */
-
 
 #file-library-search-input:focus {
     border-color: var(--alto-accent-color);
@@ -226,6 +229,19 @@ footer.stopselect.ty-footer {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
     border: 1.5px solid var(--alto-accent-color);
     background-color: #fff;
+}
+
+/* 文件被拖动 */
+.ty-on-drag-enter {
+    border-radius: 6px;
+    border: 1.5px solid var(--alto-accent-color);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* 文件被重命名 */
+input {
+    border-radius: 6px;
+    border: 1.5px solid var(--alto-accent-color);
 }
 
 /* 删除拖动时的虚线边框 */
@@ -307,6 +323,11 @@ footer.stopselect.ty-footer {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
+.ty-three-cells:before {
+    position: relative;
+    top: 0.15rem;
+}
+
 /* 侧边栏最近任务展开图标 */
 .ty-side-sort-btn.active {
     color: var(--alto-accent-color);
@@ -322,7 +343,6 @@ footer.stopselect.ty-footer {
 
 #ty-tooltip {
     border-radius: 5px;
-    border-color: var(--alto-accent-color) !important;
     background-color: #fff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.03);
     color: var(--alto-text-color);
@@ -341,7 +361,6 @@ footer.ty-footer {
 
 .dropdown-menu>li>a:hover {
     background: var(--alto-main-color);
-    border-radius: 4px;
 }
 
 /* 侧边栏 大纲 */
@@ -553,6 +572,7 @@ footer.ty-footer {
 #recent-file-panel-search-input,
 #recent-file-panel-action-btn {
     margin: 12px 0px 0px;
+    border: 1px solid #9292928f;
     border-radius: 6px;
     background-color: #fff;
     transition: all 0.2s ease;
@@ -602,4 +622,88 @@ header,
 /* 不再限制主题页的宽度 */
 #theme-preview-grid {
     max-width: none;
+}
+
+/* 
+ * 通知
+ * Notification
+ */
+
+ /* 部分样式参考了主题 Cement */
+
+.modal-open .modal.fade.in {
+    backdrop-filter: blur(8px) saturate(1.05);
+}
+
+.modal-content {
+    border-radius: 7px;
+    border-color: #fff !important;
+    margin-bottom: 0.29rem;
+    margin-left: 0.12rem;
+    background-color: #fff;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+    color: var(--alto-text-color);
+}
+
+.btn-primary,
+.btn-default {
+    border-radius: 7px;
+    border-color: transparent !important;
+    background-color: #fff;
+    color: var(--alto-text-color);
+}
+
+.btn-primary:hover,
+.btn-default:hover {
+    color: var(--alto-text-color);
+    background-color: var(--item-hover-bg-color);
+}
+
+.no-collapse-outline.ty-show-notification.unibody-window content,
+.no-collapse-outline.ty-show-notification.unibody-window content #typora-source,
+.no-collapse-outline.ty-show-notification content,
+.no-collapse-outline.ty-show-notification content #typora-source {
+    top: 28px !important;
+}
+
+.native-window.ty-show-notification.unibody-window content,
+.native-window.ty-show-notification.unibody-window content #typora-source,
+.native-window.ty-show-notification content,
+.native-window.ty-show-notification content #typora-source {
+    top: 0 !important;
+}
+
+#md-notification {
+    background-color: transparent;
+}
+
+#md-notification:before {
+    top: 11px;
+}
+
+.md-notification-container {
+    display: flex;
+    top: 5%;
+    width: 25%;
+    left: 21.7rem !important;
+    padding: 0 !important;
+    background-color: var(--alto-main-color);
+    flex-direction: row;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    border-radius: 7px;
+    border: var(--alto-accent-color) 1px solid;
+}
+
+button.btn.btn-primary.btn-sm.dropdown-toggle.dropdown-toggle-split {
+    background-color: transparent;
+}
+
+.md-notification-container .md-notification-content {
+    display: block;
+}
+
+.md-notification-container .btn-default {
+    background: none;
+    color: var(--link-color);
+    margin-right: 30px;
 }

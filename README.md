@@ -59,7 +59,7 @@ Alto 是个 `css` 文件，以引用其他主题的文件来为其提供更好�
 
 ## 配置 Configuration
 
-1. 在 `偏好设置 > 外观 > 窗口样式` 为 “一体化” 模式，关闭 Typora
+1. 在 `偏好设置 > 外观 > 窗口样式` 改为 “一体化” 样式，关闭 Typora
 
 2. 打开文件 `alto.css`
 
@@ -94,7 +94,7 @@ Alto 是个 `css` 文件，以引用其他主题的文件来为其提供更好�
 - 如果你喜欢原主题，也希望能回去给他们一个  star🌟 
 - 主题默认配置为 Lapis 以及 蓝色 主题，你可以根据自己的喜好进行配置。（再次强调，直接下载该项目的 zip 文件，并不会自动下载 Lapis 和 Spring 主题，你需要单独下载）
 - 其他第三方主题请自行下载替换代码，不一定能完全适配，不过大部分都可以了，请自行测试。也可以提交 [issue](https://github.com/Seeridia/typora-theme-alto/issues) 请求适配，或者发起 [PR](https://github.com/Seeridia/typora-theme-alto/pulls) 贡献代码。
-- 感谢 [YiNNx](https://github.com/YiNNx) 和 [SprInec](https://github.com/SprInec) 的主题，他们的审美为 Alto 提供了灵感。
+- 感谢 [YiNNx](https://github.com/YiNNx) 和 [SprInec](https://github.com/SprInec) 的主题，他们为 Alto 提供了母版。
 
 
 ![](./imgs/Header.png)
