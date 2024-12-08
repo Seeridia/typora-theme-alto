@@ -633,6 +633,11 @@ header,
 
 .modal-open .modal.fade.in {
     backdrop-filter: blur(8px) saturate(1.05);
+    transition: all 0.2s ease;
+}
+
+#common-dialog.ty-three-way-buttons:has(.btn:last-child:hover) {
+    backdrop-filter: none;
 }
 
 .modal-content {
@@ -659,6 +664,8 @@ header,
     background-color: var(--item-hover-bg-color);
 }
 
+.on-search-panel-open content,
+.on-search-panel-open content #typora-source,
 .no-collapse-outline.ty-show-notification.unibody-window content,
 .no-collapse-outline.ty-show-notification.unibody-window content #typora-source,
 .no-collapse-outline.ty-show-notification content,
@@ -681,11 +688,25 @@ header,
     top: 11px;
 }
 
+#md-searchpanel{
+    position: relative;
+    top: 2%;
+    left: 2% !important;
+    width: 55%;
+    padding: 0 !important;
+    background-color: var(--alto-main-color);
+    flex-direction: row;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    border-radius: 7px;
+    border: var(--alto-accent-color) 1px solid;
+}
+
 .md-notification-container {
     display: flex;
-    top: 5%;
+    position: relative;
+    top: 2%;
+    left: 2% !important;
     width: 25%;
-    left: 21.7rem !important;
     padding: 0 !important;
     background-color: var(--alto-main-color);
     flex-direction: row;
@@ -707,4 +728,53 @@ button.btn.btn-primary.btn-sm.dropdown-toggle.dropdown-toggle-split {
     background: none;
     color: var(--link-color);
     margin-right: 30px;
+}
+
+/* 查找、替换 */
+#md-searchpanel {
+    position: fixed;
+    top: 3rem;
+    left: 19.4rem !important;
+}
+
+#search-panel-replace-input,
+#search-panel-input{
+    height: 28px;
+    border-radius: 6px !important;
+    border: 1.5px solid var(--alto-accent-color);
+}
+
+.ty-search-panel-row,
+#searchpanel-case-option-btn,
+#searchpanel-regexp-option-btn,
+#searchpanel-word-option-btn,
+.input-group-addon btn close-btn {
+    padding-top: 5px;
+}
+
+.ty-search-panel-row {
+    margin-right: 5px !important;
+}
+
+#searchpanel-case-option-btn,
+#searchpanel-regexp-option-btn,
+#searchpanel-word-option-btn {
+    margin-top: 2.5px;
+    height: auto;
+}
+#md-searchpanel .btn {
+    padding-top: 2px;
+}
+
+#md-search-type-label {
+    padding-top: 0px;
+}
+
+.searchpanel-search-option-btn {
+    border: none !important;
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
