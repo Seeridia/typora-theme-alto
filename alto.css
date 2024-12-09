@@ -629,7 +629,7 @@ header,
  * Notification
  */
 
- /* 部分样式参考了主题 Cement */
+/* 部分样式参考了主题 Cement */
 
 .modal-open .modal.fade.in {
     backdrop-filter: blur(8px) saturate(1.05);
@@ -688,7 +688,7 @@ header,
     top: 11px;
 }
 
-#md-searchpanel{
+#md-searchpanel {
     position: relative;
     top: 2%;
     left: 2% !important;
@@ -703,9 +703,9 @@ header,
 
 .md-notification-container {
     display: flex;
-    position: relative;
-    top: 2%;
-    left: 2% !important;
+    position: fixed;
+    top: 3.3rem;
+    left: 19.7rem !important;
     width: 25%;
     padding: 0 !important;
     background-color: var(--alto-main-color);
@@ -738,7 +738,7 @@ button.btn.btn-primary.btn-sm.dropdown-toggle.dropdown-toggle-split {
 }
 
 #search-panel-replace-input,
-#search-panel-input{
+#search-panel-input {
     height: 28px;
     border-radius: 6px !important;
     border: 1.5px solid var(--alto-accent-color);
@@ -762,6 +762,7 @@ button.btn.btn-primary.btn-sm.dropdown-toggle.dropdown-toggle-split {
     margin-top: 2.5px;
     height: auto;
 }
+
 #md-searchpanel .btn {
     padding-top: 2px;
 }
@@ -777,4 +778,29 @@ button.btn.btn-primary.btn-sm.dropdown-toggle.dropdown-toggle-split {
 #md-searchpanel .btn:not(.close-btn):hover {
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+
+/* 
+ * 偏好设置
+* Preferences
+ */
+
+.nav-group-item.active {
+    background-color: var(--alto-main-color) !important;
+    border-radius: 7px;
+}
+
+input:not([type=range]):not([type=color]),
+select {
+    border-radius: 4px !important;
+    border: 1.5px solid var(--alto-accent-color) !important;
+}
+
+button.btn-default {
+    border-radius: 7px;
+    background-color: var(--alto-main-color);
+}
+
+.input-group-content {
+    border-radius: 7px;
 }
