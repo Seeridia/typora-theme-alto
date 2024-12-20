@@ -2,7 +2,7 @@
  *     Typora Theme - Alto    /    Author - Seeridia
  *     https://github.com/Seeridia/typora-theme-alto
  *     
- *     Version - 2.0.1
+ *     Version - 2.0.2
  */
 
 
@@ -120,6 +120,10 @@ footer.ty-footer {
     border-top-width: 0px;
 }
 
+.typora-node.pin-outline:not(.megamenu-opened):not(.typora-sourceview-on) footer.ty-footer {
+    margin-bottom: 3px;
+}
+
 /* 书写区域与侧边栏的右键菜单以及字数统计、拼写检查的样式 */
 #spell-check-panel,
 #footer-word-count-info,
@@ -166,6 +170,16 @@ footer.stopselect.ty-footer {
 /* Code Mode 下的背景 */
 #typora-source {
     background-color: transparent;
+}
+
+/* 插入表格 */
+.form-control {
+    border-radius: 6px !important;
+    border: 1.5px solid var(--alto-accent-color);
+}
+
+.form-control:focus {
+    border-color: var(--alto-accent-color);
 }
 
 /*
@@ -782,25 +796,94 @@ button.btn.btn-primary.btn-sm.dropdown-toggle.dropdown-toggle-split {
 
 /* 
  * 偏好设置
-* Preferences
+ * Preferences
  */
+
+
+input[type=search]:focus {
+    box-shadow: none !important;
+}
 
 .nav-group-item.active {
     background-color: var(--alto-main-color) !important;
     border-radius: 7px;
+    color: var(--alto-text-color) !important;
 }
 
-input:not([type=range]):not([type=color]),
+.list-group-header input:not([type=range]):not([type=color]),
 select {
-    border-radius: 4px !important;
+    border-radius: 5px !important;
     border: 1.5px solid var(--alto-accent-color) !important;
 }
 
-button.btn-default {
+[data-localize="OK"],
+button.btn-default:not([data-localize="Cancel"]) {
     border-radius: 7px;
     background-color: var(--alto-main-color);
 }
 
 .input-group-content {
     border-radius: 7px;
+}
+
+.export-detail,
+.export-item.active {
+    background: rgba(244, 244, 244) !important;
+}
+
+.window-header {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+/* 许可证按钮（彩蛋） */
+
+/* From Uiverse.io by cssbuttons-io */
+#about-content-license-button {
+    position: relative;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 2.5em;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: black;
+    background-color: white;
+}
+
+#about-content-license-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#about-content-license-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#about-content-license-button::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+#about-content-license-button::after {
+    background-color: #fff;
+}
+
+#about-content-license-button:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
 }
