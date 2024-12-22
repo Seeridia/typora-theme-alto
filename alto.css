@@ -100,7 +100,7 @@ html {
 }
 
 content {
-    background-color: var(--alto-content-color);
+    background-color: rgba(255, 255, 255, 0.75);
     border-radius: 8px !important;
     margin: 2px 8px 8px 8px;
 }
@@ -108,6 +108,7 @@ content {
 /* 书写区域鼠标移入的动画 */
 content:hover {
     margin: 0px 5px 5px 5px;
+    background-color: rgba(255, 255, 255, 1);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
@@ -134,10 +135,27 @@ footer.ty-footer {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
+[data-localize="Inspect Element"] {
+    border-radius: 7px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
 #ty-spell-check-panel-item-label {
     border: #d1d6d9 solid 1px !important;
     border-radius: 7px;
     background-color: #fff;
+}
+
+.ty-footer-word-count-all table tr {
+    display: block;
+    border-radius: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.ty-footer-word-count-all table tr:hover {
+    background-color: var(--alto-main-color) !important;
 }
 
 /* 滚动条 */
@@ -161,6 +179,7 @@ footer.ty-footer {
 
 #write {
     margin-bottom: 0px;
+    background-color: transparent;
 }
 
 footer.stopselect.ty-footer {
@@ -337,6 +356,11 @@ input {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
+
+#sidebar-files-menu.dropdown-menu>li>a {
+    border-radius: 7px;
+}
+
 .ty-three-cells:before {
     position: relative;
     top: 0.15rem;
@@ -373,7 +397,13 @@ footer.ty-footer {
     color: var(--alto-text-color);
 }
 
-.dropdown-menu>li>a:hover {
+#sidebar-files-menu.dropdown-menu>li>a {
+    border-radius: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#sidebar-files-menu.dropdown-menu>li>a:hover {
     background: var(--alto-main-color);
 }
 
@@ -449,6 +479,10 @@ footer.ty-footer {
     border-radius: 40% 20% 20% 40%;
 }
 
+.context-menu .state-on:before {
+    content: "\2713";
+}
+
 /*
  * 一体化菜单
  * Menu - Unibody
@@ -516,8 +550,8 @@ footer.ty-footer {
 
 .megamenu-section {
     background-color: #fff;
-    border-radius: 8px !important;
-    margin: 10px 0px 5px 0px;
+    border-radius: 10px !important;
+    margin: 13px 0px 5px 0px;
     width: 100%;
 }
 
@@ -563,6 +597,12 @@ footer.ty-footer {
 #megamenu-menu-sidebar #megamenu-menu-list li a.active,
 #megamenu-menu-sidebar #megamenu-menu-list li a:hover {
     background-color: inherit !important;
+}
+
+/* 返回箭头 */
+.ion-android-arrow-back:before {
+    content: "\1f860";
+    /* 🡠 */
 }
 
 /* 打开、导出、主题界面的按钮 */
