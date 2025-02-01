@@ -17,14 +17,13 @@
 /* 
  * 导入主题 / Import Theme
 
---- Typora 内置主题 / Built-in themes ---
+--- 内置主题 / Built-in themes ---
 @import "github.css";
 @import "newsprint.css";
 @import "whitey.css";
 @import "pixyll.css";
 
 --- 第三方主题 / Third-party themes ---
-
 @import "alto/lapis/lapis.css";
 @import "alto/spring/spring.css";
 
@@ -82,6 +81,14 @@ You can also request the adaptation by submitting an issue or submitting a PR to
     --alto-text-color: #40464f;
 }
 
+@media print {
+
+    html {
+        background-color: unset;
+    }
+
+}
+
 html {
     background-color: var(--alto-main-color);
 }
@@ -90,6 +97,14 @@ html {
  * 书写区域
  * Write
  */
+
+/* 右键菜单 */
+
+[role="menu"] li>a {
+    border-radius: 7px !important;
+    margin-left: 2px;
+    margin-right: 2px;
+}
 
 .outline-btn {
     transform: rotate3d(-1, -1, 0, 15deg);
@@ -135,12 +150,6 @@ footer.ty-footer {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
-[data-localize="Inspect Element"] {
-    border-radius: 7px;
-    margin-left: 2px;
-    margin-right: 2px;
-}
-
 #ty-spell-check-panel-item-label {
     border: #d1d6d9 solid 1px !important;
     border-radius: 7px;
@@ -184,6 +193,11 @@ footer.ty-footer {
 
 footer.stopselect.ty-footer {
     background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn {
+    background-color: var(--alto-main-color);
+    border-radius: 7px;
 }
 
 /* Code Mode 下的背景 */
@@ -246,7 +260,6 @@ footer.stopselect.ty-footer {
 
 /* 文件被选中但鼠标不在侧边栏 */
 .file-library-node.file-tree-node.file-library-file-node.active {
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
     background-color: #fff;
 }
 
@@ -686,7 +699,9 @@ header,
 /* 部分样式参考了主题 Cement */
 
 .modal-open .modal.fade.in {
-    backdrop-filter: blur(8px) saturate(1.05);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     transition: all 0.2s ease;
 }
 
@@ -702,6 +717,10 @@ header,
     background-color: #fff;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
     color: var(--alto-text-color);
+}
+
+.btn-primary {
+    background-color: var(--alto-main-color) !important;
 }
 
 .btn-primary,
