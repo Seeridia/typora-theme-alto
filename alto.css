@@ -209,6 +209,8 @@ footer.stopselect.ty-footer {
 .form-control {
     border-radius: 6px !important;
     border: 1.5px solid var(--alto-accent-color);
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .form-control:focus {
@@ -226,17 +228,13 @@ footer.stopselect.ty-footer {
 
 /* 侧边栏主颜色 */
 #typora-sidebar {
+    border-right: none !important;
     background-color: transparent;
     color: var(--alto-text-color);
 }
 
 #sidebar-content.sidebar-content {
     top: 4rem;
-}
-
-/* 侧边栏边框 */
-#typora-sidebar {
-    border-right: none !important;
 }
 
 .file-tree-node.active>.file-node-background {
@@ -698,13 +696,15 @@ header,
 
 /* 部分样式参考了主题 Cement */
 
+/* 弹窗出来后的模糊效果 */
 .modal-open .modal.fade.in {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     transition: all 0.2s ease;
 }
 
+/* 当弹窗悬停部分按钮时，预览关闭模糊 */
+#table-insert-dialog:has(.btn:last-child:hover),
 #common-dialog.ty-three-way-buttons:has(.btn:last-child:hover) {
     backdrop-filter: none;
 }
@@ -719,21 +719,34 @@ header,
     color: var(--alto-text-color);
 }
 
-.btn-primary {
-    background-color: var(--alto-main-color) !important;
-}
-
+/* 弹窗选项 */
 .btn-primary,
 .btn-default {
     border-radius: 7px;
-    border-color: transparent !important;
-    background-color: #fff;
     color: var(--alto-text-color);
 }
 
-.btn-primary:hover,
-.btn-default:hover {
+#common-dialog .btn-primary {
+    background-color: var(--alto-main-color) !important;
     color: var(--alto-text-color);
+}
+
+#common-dialog .btn-default {
+    background-color: transparent;
+}
+
+#table-insert-dialog .btn-primary:hover,
+#table-insert-dialog .btn-primary {
+    background-color: var(--alto-main-color) !important;
+    color: var(--alto-text-color);
+}
+
+#table-insert-dialog .btn-default {
+    background-color: transparent;
+}
+
+#common-dialog .btn-default:hover,
+#table-insert-dialog .btn-default:hover {
     background-color: var(--item-hover-bg-color);
 }
 
@@ -895,7 +908,7 @@ button.btn-default:not([data-localize="Cancel"]) {
     box-shadow: none !important;
 }
 
-/* 许可证按钮（彩蛋） */
+/* 许可证 */
 
 /* From Uiverse.io by cssbuttons-io */
 #about-content-license-button {
