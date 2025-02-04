@@ -1,0 +1,879 @@
+/* 
+ * Alto 配置 / Alto Configuration
+ * -----------------------------
+ */
+
+@media print {
+
+    html {
+        background-color: unset;
+    }
+
+}
+
+html {
+    background-color: var(--alto-main-color);
+}
+
+/*
+ * 书写区域
+ * Write
+ */
+
+/* 右键菜单 */
+
+[role="menu"] li>a {
+    border-radius: 7px !important;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.outline-btn {
+    transform: rotate3d(-1, -1, 0, 15deg);
+}
+
+#top-titlebar {
+    background-color: transparent !important;
+}
+
+content {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 8px !important;
+    margin: 2px 8px 8px 8px;
+}
+
+/* 书写区域鼠标移入的动画 */
+content:hover {
+    margin: 0px 5px 5px 5px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* 使得小窗口下，书写区域放大后底栏不遮挡 */
+footer.ty-footer {
+    background-color: transparent;
+}
+
+.stopselect.ty-footer {
+    border-top-width: 0px;
+}
+
+.typora-node.pin-outline:not(.megamenu-opened):not(.typora-sourceview-on) footer.ty-footer {
+    margin-bottom: 3px;
+}
+
+/* 书写区域与侧边栏的右键菜单以及字数统计、拼写检查的样式 */
+#spell-check-panel,
+#footer-word-count-info,
+[role="menu"] {
+    border-radius: 7px;
+    border: #d1d6d9 solid 1px;
+    background-color: var(--alto-content-color);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+#ty-spell-check-panel-item-label {
+    border: #d1d6d9 solid 1px !important;
+    border-radius: 7px;
+    background-color: var(--alto-content-color);
+}
+
+.ty-footer-word-count-all table tr {
+    display: block;
+    border-radius: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.ty-footer-word-count-all table tr:hover {
+    background-color: var(--alto-main-color) !important;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+/* 设置界面不显示滚动条 */
+#megamenu-content::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0000001c !important;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#write {
+    margin-bottom: 0px;
+    background-color: transparent;
+}
+
+footer.stopselect.ty-footer {
+    background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn {
+    background-color: var(--alto-main-color);
+    border-radius: 7px;
+}
+
+/* Code Mode 下的背景 */
+#typora-source {
+    background-color: transparent;
+}
+
+/* 插入表格 */
+.form-control {
+    border-radius: 6px !important;
+    border: 1.5px solid var(--alto-accent-color);
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.form-control:focus {
+    border-color: var(--alto-accent-color);
+}
+
+/*
+ * 侧边栏
+ * Sidebar
+ */
+
+#file-library-search-input:focus {
+    border-color: var(--alto-accent-color);
+}
+
+/* 侧边栏主颜色 */
+#typora-sidebar {
+    border-right: none !important;
+    background-color: transparent;
+    color: var(--alto-text-color);
+}
+
+#sidebar-content.sidebar-content {
+    top: 4rem;
+}
+
+.file-tree-node.active>.file-node-background {
+    display: none;
+}
+
+/* 文件未被选中 */
+.file-library-node.file-tree-node.file-library-file-node {
+    border-radius: 6px;
+    border: 1.5px solid transparent;
+    transform: scale(1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease, border 0.3s ease !important;
+}
+
+/* 文件被悬停 */
+.file-library-node.file-tree-node.file-library-file-node:hover {
+    transform: scale(0.98);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
+    border: 1.5px solid var(--alto-accent-color);
+}
+
+/* 文件被选中但鼠标不在侧边栏 */
+.file-library-node.file-tree-node.file-library-file-node.active {
+    background-color: var(--alto-content-color);
+}
+
+/* 文件被选中且被悬浮 */
+.file-library-node.file-tree-node.file-library-file-node.active:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
+    background-color: var(--alto-content-color);
+}
+
+/* 文件被选中但鼠标在侧边栏 */
+#file-library:hover .file-library-node.file-tree-node.file-library-file-node.active {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
+    border: 1.5px solid var(--alto-accent-color);
+    background-color: var(--alto-content-color);
+}
+
+/* 文件被拖动 */
+.ty-on-drag-enter {
+    border-radius: 6px;
+    border: 1.5px solid var(--alto-accent-color);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* 文件被重命名 */
+input {
+    border-radius: 6px;
+    border: 1.5px solid var(--alto-accent-color);
+}
+
+/* 删除拖动时的虚线边框 */
+.file-library-node:not(.file-node-root):focus>.file-node-content {
+    outline: none;
+}
+
+.active-tab-files #info-panel-tab-file .info-panel-tab-border,
+.active-tab-outline #info-panel-tab-outline .info-panel-tab-border,
+.ty-show-search #info-panel-tab-search .info-panel-tab-border {
+    display: none !important;
+}
+
+.file-library-node.file-tree-node.file-library-file-node:hover {
+    background-color: var(--alto-content-color)fff50;
+}
+
+#file-library-tree {
+    padding-right: 8px;
+}
+
+#file-library-tree .file-tree-node {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.file-node-content {
+    color: var(--alto-text-color) !important;
+    line-height: 2.1rem;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.file-node-icon.fa.fa-folder {
+    color: var(--alto-accent-color);
+}
+
+.file-node-on-edi,
+#file-library-search-input {
+    border-radius: 6px;
+}
+
+.file-library-node.file-tree-node.file-library-file-node:hover {
+    background-color: var(--alto-content-color);
+    border-radius: 6px;
+}
+
+.sidebar-footer-item.footer-item-right.footer-btn.file-action-item.not-empty-menu-group.show {
+    padding-top: 0px;
+}
+
+#typora-sidebar .file-tree-node.file-library-file-node:not(.active):hover .file-node-background {
+    background-color: transparent;
+}
+
+#typora-sidebar #sidebar-content .sidebar-content-content .file-tree-node:not(.file-node-root):hover>.file-node-background {
+    border: none;
+    background-color: transparent;
+}
+
+/* 侧边底栏 */
+#sidebar-files-menu {
+    border-radius: 7px;
+    border-color: var(--alto-content-color) !important;
+    margin-bottom: 0.29rem;
+    margin-left: 0.12rem;
+    background-color: var(--alto-content-color);
+    box-shadow: none;
+    color: var(--alto-text-color);
+    scale: 0.99;
+    transform-origin: bottom left;
+    transition: scale 0.2s ease, box-shadow 0.3s ease;
+}
+
+#sidebar-files-menu:hover {
+    scale: 1;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+
+#sidebar-files-menu.dropdown-menu>li>a {
+    border-radius: 7px;
+}
+
+.ty-three-cells:before {
+    position: relative;
+    top: 0.15rem;
+}
+
+/* 侧边栏最近任务展开图标 */
+.ty-side-sort-btn.active {
+    color: var(--alto-accent-color);
+}
+
+.selected-folder-menu-item a:after {
+    color: var(--alto-accent-color);
+}
+
+.sidebar-footer-item:hover {
+    background: none;
+}
+
+#ty-tooltip {
+    border-radius: 5px;
+    background-color: var(--alto-content-color);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.03);
+    color: var(--alto-text-color);
+}
+
+footer.ty-footer {
+    padding-left: 4px;
+    padding-right: 0px;
+}
+
+.sidebar-menu .dropdown-menu>li>a,
+.sidebar-menu .dropdown-menu>li>a:focus,
+.sidebar-menu .dropdown-menu>li>a:hover {
+    color: var(--alto-text-color);
+}
+
+#sidebar-files-menu.dropdown-menu>li>a {
+    border-radius: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+#sidebar-files-menu.dropdown-menu>li>a:hover {
+    background: var(--alto-main-color);
+}
+
+/* 侧边栏 大纲 */
+/* 大纲 参考了 Phycat 主题样式 */
+
+#outline-content .outline-h1>.outline-item {
+    font-size: larger;
+    font-weight: bold;
+    color: var(--alto-accent-color);
+}
+
+#outline-content .outline-h1:not(:first-of-type)>.outline-item {
+    margin-top: 10px;
+}
+
+#outline-content .outline-h2>.outline-item::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    color: var(--alto-accent-color);
+    border-color: var(--alto-accent-color) !important;
+    vertical-align: middle;
+    float: left;
+    margin-top: -2px;
+    margin-right: 11px;
+    margin-left: -24px;
+    border-radius: 100%;
+    border: 3px solid var(--alto-content-color);
+    z-index: 100;
+    position: relative;
+    top: 8px;
+    left: 8px;
+}
+
+#outline-content .outline-h2::after {
+    content: "";
+    height: calc(100% - 24px);
+    width: 1px;
+    color: var(--alto-accent-color);
+    position: absolute;
+    left: 3px;
+    top: 21px;
+}
+
+#outline-content .outline-h2>.outline-item:last-child:after {
+    display: none;
+}
+
+#outline-content .outline-h2>.outline-item>.outline-label {
+    line-height: 1.65rem;
+    margin: 0;
+}
+
+#outline-content .outline-h2>.outline-item {
+    margin-bottom: -3px;
+}
+
+#outline-content .outline-h3>.outline-item>.outline-label {
+    border-left: 2px solid var(--alto-accent-color);
+    padding-left: 8px;
+}
+
+.outline-item-active:not(.outline-item-wrapper)::after {
+    content: "";
+    position: relative;
+    width: 11px;
+    height: 8px;
+    background: var(--alto-accent-color);
+    float: right;
+    top: -12px;
+    z-index: 100;
+    border-radius: 40% 20% 20% 40%;
+}
+
+.context-menu .state-on:before {
+    content: "\2713";
+}
+
+/*
+ * 一体化菜单
+ * Menu - Unibody
+ */
+
+.dropdown-menu.megamenu-menu-list.dropdown-menu>li>a:hover {
+    background: #f9fffd;
+    border-radius: 0px;
+}
+
+.megamenu-menu {
+    box-shadow: none;
+    border-right: none !important;
+}
+
+.megamenu-menu,
+.ion-android-arrow-back:before,
+.megamenu-menu-header-title-menu,
+.megamenu-menu-header-title-back {
+    background-color: transparent;
+    color: var(--alto-text-color);
+}
+
+.megamenu-menu-header {
+    border-bottom: 0px;
+}
+
+.megamenu-menu-panel h1,
+.megamenu-menu-panel h2 {
+    font-family: 'SourceHanSerifCN';
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: var(--alto-accent-color);
+}
+
+#recent-file-panel tbody tr {
+    border-radius: 6px;
+    font-family: 'SourceHanSerifCN';
+}
+
+#recent-file-panel tbody tr:hover {
+    background-color: var(--alto-main-color);
+}
+
+.megamenu-menu-panel {
+    margin-top: 0px !important;
+    border-bottom: 1px solid var(--alto-accent-color);
+    padding-bottom: 30px;
+    padding-top: 30px;
+    margin-right: 20px;
+    width: auto;
+}
+
+.megamenu-menu-panel:has([data-localize="Recent Documents"]),
+.megamenu-menu-panel:has([data-localize="Image"]),
+.megamenu-menu-panel:has([data-localize="Open Theme Folder"]),
+.megamenu-menu-panel:has([data-localize="Contact"]) {
+    border-bottom: 0px;
+}
+
+.menu-style-btn {
+    border: 0px;
+}
+
+.megamenu-section {
+    background-color: var(--alto-content-color);
+    border-radius: 10px !important;
+    margin: 13px 0px 5px 0px;
+    width: 100%;
+}
+
+.megamenu-menu-panel.megamenu-menu-content-section {
+    margin-bottom: 0px;
+}
+
+.megamenu-menu-list li a,
+.megamenu-menu-list:not(.saved) li a {
+    border-left: transparent solid 3px;
+    margin-left: 5px;
+}
+
+.megamenu-menu-list li a.active,
+.megamenu-menu-list:not(.saved) li a:hover {
+    background-color: transparent;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: var(--alto-accent-color);
+    font-weight: bold;
+}
+
+.megamenu-menu-list li a.active {
+    border-left: var(--alto-accent-color) solid 3px;
+}
+
+.megamenu-menu-list:not(.saved) li a:hover {
+    border-left: #aeaeae solid 3px;
+}
+
+.theme-preview-div.active .fa {
+    display: none;
+}
+
+#megamenu-menu-sidebar #megamenu-menu-list li a {
+    color: var(--alto-text-color) !important;
+}
+
+#megamenu-menu-list {
+    background-color: inherit !important;
+}
+
+#megamenu-menu-sidebar #megamenu-menu-list li a.active,
+#megamenu-menu-sidebar #megamenu-menu-list li a:hover {
+    background-color: inherit !important;
+}
+
+/* 返回箭头 */
+.ion-android-arrow-back:before {
+    content: "\1f860";
+    /* 🡠 */
+}
+
+/* 打开、导出、主题界面的按钮 */
+.long-btn {
+    border-radius: 10px;
+    border: 1px solid #888;
+    transform: scale(0.98);
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.long-btn:hover {
+    transform: scale(0.99);
+    box-shadow: 0 0 0 1.5px var(--alto-accent-color);
+}
+
+.theme-preview-div:hover {
+    transform: scale(1);
+}
+
+#recent-file-panel-search-input,
+#recent-file-panel-action-btn {
+    margin: 12px 0px 0px;
+    border: 1px solid #9292928f;
+    border-radius: 6px;
+    background-color: var(--alto-content-color);
+    transition: all 0.2s ease;
+}
+
+#recent-file-panel-search-input:focus {
+    border-color: var(--alto-accent-color);
+}
+
+#recent-document-table {
+    border-collapse: collapse;
+}
+
+.theme-preview-content,
+.theme-preview-div {
+    width: 10rem;
+    margin-right: 2rem;
+    transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: scale(0.98);
+}
+
+.theme-preview-div:hover,
+.theme-preview-div.active {
+    border-color: var(--alto-accent-color);
+}
+
+.theme-preview-div.active>.theme-preview-content,
+.theme-preview-div.active {
+    width: 22rem;
+}
+
+header,
+#megamenu-content {
+    background-image: none !important;
+    background-color: var(--alto-main-color) !important;
+}
+
+#recent-document-table {
+    border-radius: 7px;
+}
+
+/* 部分主题的提示 Pandoc 下载没有高亮 */
+.open-pandoc-guide {
+    color: var(--alto-accent-color) !important;
+}
+
+/* 不再限制主题页的宽度 */
+#theme-preview-grid {
+    max-width: none;
+}
+
+/* 
+ * 通知
+ * Notification
+ */
+
+/* 部分样式参考了主题 Cement */
+
+/* 弹窗出来后的模糊效果 */
+.modal-open .modal.fade.in {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    transition: all 0.2s ease;
+}
+
+/* 当弹窗悬停部分按钮时，预览关闭模糊 */
+#table-insert-dialog:has(.btn:last-child:hover),
+#common-dialog.ty-three-way-buttons:has(.btn:last-child:hover) {
+    backdrop-filter: none;
+}
+
+.modal-content {
+    border-radius: 7px;
+    border-color: var(--alto-content-color) !important;
+    margin-bottom: 0.29rem;
+    margin-left: 0.12rem;
+    background-color: var(--alto-content-color);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+    color: var(--alto-text-color);
+}
+
+/* 弹窗选项 */
+.btn-primary,
+.btn-default {
+    border-radius: 7px;
+    color: var(--alto-text-color);
+}
+
+#common-dialog .btn-primary {
+    background-color: var(--alto-main-color) !important;
+    color: var(--alto-text-color);
+}
+
+#common-dialog .btn-default {
+    background-color: transparent;
+}
+
+#table-insert-dialog .btn-primary:hover,
+#table-insert-dialog .btn-primary {
+    background-color: var(--alto-main-color) !important;
+    color: var(--alto-text-color);
+}
+
+#table-insert-dialog .btn-default {
+    background-color: transparent;
+}
+
+#common-dialog .btn-default:hover,
+#table-insert-dialog .btn-default:hover {
+    background-color: var(--item-hover-bg-color);
+}
+
+.on-search-panel-open content,
+.on-search-panel-open content #typora-source,
+.no-collapse-outline.ty-show-notification.unibody-window content,
+.no-collapse-outline.ty-show-notification.unibody-window content #typora-source,
+.no-collapse-outline.ty-show-notification content,
+.no-collapse-outline.ty-show-notification content #typora-source {
+    top: 28px !important;
+}
+
+.native-window.ty-show-notification.unibody-window content,
+.native-window.ty-show-notification.unibody-window content #typora-source,
+.native-window.ty-show-notification content,
+.native-window.ty-show-notification content #typora-source {
+    top: 0 !important;
+}
+
+#md-notification {
+    background-color: transparent;
+}
+
+#md-notification:before {
+    top: 11px;
+}
+
+/* 查找、替换 */
+#md-searchpanel {
+    position: relative;
+    top: 2%;
+    left: 2% !important;
+    width: 55%;
+    padding: 0 !important;
+    background-color: var(--alto-main-color);
+    flex-direction: row;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    border-radius: 7px;
+    border: var(--alto-accent-color) 1px solid;
+}
+
+.md-notification-container {
+    display: flex;
+    position: fixed;
+    top: 3.3rem;
+    left: 19.7rem !important;
+    width: 25%;
+    padding: 0 !important;
+    background-color: var(--alto-main-color);
+    flex-direction: row;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    border-radius: 7px;
+    border: var(--alto-accent-color) 1px solid;
+}
+
+button.btn.btn-primary.btn-sm.dropdown-toggle.dropdown-toggle-split {
+    background-color: white;
+    color: var(--alto-accent-color);
+}
+
+.md-notification-container .md-notification-content {
+    display: block;
+}
+
+.md-notification-container .btn-default {
+    background: none;
+    color: var(--link-color);
+    margin-right: 30px;
+}
+
+#search-panel-replace-input,
+#search-panel-input {
+    height: 28px;
+    border-radius: 6px !important;
+    border: 1.5px solid var(--alto-accent-color);
+}
+
+.ty-search-panel-row,
+#searchpanel-case-option-btn,
+#searchpanel-regexp-option-btn,
+#searchpanel-word-option-btn,
+.input-group-addon btn close-btn {
+    padding-top: 5px;
+}
+
+.ty-search-panel-row {
+    margin-right: 5px !important;
+}
+
+#searchpanel-case-option-btn,
+#searchpanel-regexp-option-btn,
+#searchpanel-word-option-btn {
+    margin-top: 2.5px;
+    height: auto;
+}
+
+#md-searchpanel .btn {
+    padding-top: 2px;
+}
+
+#md-search-type-label {
+    padding-top: 0px;
+}
+
+.searchpanel-search-option-btn {
+    border: none !important;
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* 
+ * 偏好设置
+ * Preferences
+ */
+
+
+input[type=search]:focus {
+    box-shadow: none !important;
+}
+
+.nav-group-item.active {
+    background-color: var(--alto-main-color) !important;
+    border-radius: 7px;
+    color: var(--alto-text-color) !important;
+}
+
+.list-group-header input:not([type=range]):not([type=color]),
+select {
+    border-radius: 4px !important;
+    border: 1px solid #8A8A8A !important;
+}
+
+[data-localize="OK"],
+button.btn-default:not([data-localize="Cancel"]) {
+    border-radius: 7px;
+    border: none;
+    background-color: var(--alto-main-color);
+}
+
+.input-group-content {
+    border-radius: 7px;
+}
+
+.export-detail,
+.export-item.active {
+    background: rgba(244, 244, 244) !important;
+}
+
+.window-header {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+/* 许可证 */
+
+/* From Uiverse.io by cssbuttons-io */
+#about-content-license-button {
+    position: relative;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 2.5em;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: black;
+    background-color: white;
+}
+
+#about-content-license-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#about-content-license-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#about-content-license-button::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+#about-content-license-button::after {
+    background-color: var(--alto-content-color);
+}
+
+#about-content-license-button:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
