@@ -1,0 +1,30 @@
+@import "alto/lapis/lapis-dark.css";
+@import "alto/alto.css";
+
+:root {
+    --alto-accent-color: #487dac;
+    --alto-main-color: #070C14;
+    --alto-content-color: rgb(20, 20, 20);
+    --alto-text-color: #fff;
+}
+
+content {
+    background-color: rgba(20, 20, 20, 0.75);
+}
+
+content:hover {
+    background-color: rgba(20, 20, 20, 1);
+}
+
+#spell-check-panel,
+#footer-word-count-info,
+[role="menu"] {
+    border: #8a8d8f;
+}
+
+/* 右键菜单 */
+.context-menu.dropdown-menu>.active>a,
+.context-menu.dropdown-menu>li>a:hover,
+.menu-style-btn.active {
+    background-color: #373A47;
+}
