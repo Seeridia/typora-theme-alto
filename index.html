@@ -11,47 +11,387 @@
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
     <style>
-        body,
-        html {
-            height: 100%;
+        body, html {
             margin: 0;
+            font-family: 'Quattrocento Sans', sans-serif;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1a1f25 0%, #2b3543 100%);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .left-section {
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            padding: 2rem 4rem;
+            max-width: 600px;
+            margin: 0 auto;
+            height: 100%;
+            margin-top: -2rem;
+        }
+
+        .right-section {
+            display: flex;
             align-items: center;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            color: #9FD7F0;
-            background-image: url(./imgs/background.png);
-            background-size: cover;
-            background-position: center;
+            justify-content: center;
+            position: relative;
+            height: 100%;
+            margin-top: -2rem;
         }
 
         .title {
-            width: 20vw;
+            width: 60%;
+            min-width: 200px;
+            max-width: 300px;
+            margin-bottom: 1.5rem;
         }
 
         .subtitle {
-            font-size: 2vw;
-            font-family: 'Quattrocento Sans', sans-serif;
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 300;
         }
 
-        .zoom-link img {
-            transition: transform 0.3s ease;
+        .description {
+            max-width: 500px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin: 2rem 0;
         }
 
-        .zoom-link:hover img {
-            transform: scale(1.1);
+        .stacked-cards {
+            position: relative;
+            width: 300px;
+            height: 180px;
+            perspective: 1000px;
+        }
+
+        .feature {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center right;
+        }
+
+        .stacked-cards:not(:hover) .feature:nth-child(1) {
+            transform: translateX(0) rotate(-2deg);
+        }
+
+        .stacked-cards:not(:hover) .feature:nth-child(2) {
+            transform: translateX(-5px) rotate(1deg);
+        }
+
+        .stacked-cards:not(:hover) .feature:nth-child(3) {
+            transform: translateX(-10px) rotate(4deg);
+        }
+
+        .stacked-cards:hover .feature:nth-child(1) {
+            transform: translateX(0) rotate(0);
+        }
+
+        .stacked-cards:hover .feature:nth-child(2) {
+            transform: translateX(-400px) rotate(0);
+        }
+
+        .stacked-cards:hover .feature:nth-child(3) {
+            transform: translateX(-800px) rotate(0);
+        }
+
+        .button {
+            font-family: inherit;
+            font-size: 16px;
+            background: linear-gradient(135deg, rgba(72, 125, 172, 0.9), rgba(90, 143, 190, 0.9));
+            color: white;
+            padding: 0.7em 1.2em;
+            display: inline-flex;
+            align-items: center;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 2rem;
+            width: fit-content;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .button span {
+            display: block;
+            margin-left: 0.5em;
+            transition: all 0.3s ease;
+        }
+
+        .svg-wrapper-1 {
+            height: 24px;
+            margin-right: 0.3em;
+            transform: translateX(0);
+            transition: transform 0.35s cubic-bezier(0.65, 0, 0.076, 1) 0s;
+        }
+
+        .button:hover .svg-wrapper-1 {
+            transform: translateX(4em);
+        }
+
+        .svg-wrapper {
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .button svg {
+            display: block;
+            transform-origin: center center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 24px;
+            height: 24px;
+            transform: rotate(0deg);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, rgba(90, 143, 190, 0.95), rgba(108, 161, 208, 0.95));
+            box-shadow: 0 6px 25px rgba(72, 125, 172, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .button:hover .svg-wrapper {
+            transform: rotate(10deg);
+        }
+
+        .button:hover span {
+            transform: translateX(3px);
+        }
+
+        .button:active {
+            transform: scale(0.96) translateY(0);
+            transition: all 0.1s;
+        }
+
+        @keyframes fly-1 {
+            from {
+                transform: translateY(0.1em);
+            }
+
+            to {
+                transform: translateY(-0.1em);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body, html {
+                height: auto;
+                overflow-y: auto;
+                min-height: 100vh;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                height: auto;
+                min-height: 100vh;
+                padding: 2rem 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 3rem;
+            }
+
+            .left-section {
+                padding: 1rem;
+                text-align: center;
+                height: auto;
+                margin-top: 0;
+                width: 90%;
+                max-width: 300px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .title {
+                width: 85%;
+                margin: 0 auto 1.5rem;
+            }
+
+            .description {
+                width: 85%;
+                margin: 1.5rem auto;
+            }
+
+            .subtitle {
+                width: 85%;
+                margin: 0.5rem auto;
+            }
+
+            .right-section {
+                padding: 1rem;
+                text-align: center;
+                height: auto;
+                margin-top: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .description {
+                margin: 1.5rem auto;
+            }
+
+            .stacked-cards {
+                margin: 0 auto;
+                height: auto;
+                width: 90%;
+                max-width: 300px;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0;
+                perspective: none;
+            }
+
+            .feature {
+                position: relative;
+                margin: 0 auto;
+                width: 85%;
+                transform: none !important;
+                opacity: 0;
+                animation: fadeInUp 0.5s forwards;
+                height: auto;
+                min-height: 120px;
+                box-sizing: border-box;
+            }
+
+            .stacked-cards .feature:nth-child(1),
+            .stacked-cards .feature:nth-child(2),
+            .stacked-cards .feature:nth-child(3) {
+                left: 0;
+                right: 0;
+                margin: 0 auto 1rem auto;
+            }
+
+            .stacked-cards .feature {
+                position: relative;
+                margin-bottom: 1rem;
+                transform: none !重要;
+                opacity: 0;
+                animation: fadeInUp 0.5s forwards;
+            }
+
+            .stacked-cards .feature:nth-child(1) {
+                animation-delay: 0s;
+            }
+
+            .stacked-cards .feature:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+
+            .stacked-cards .feature:nth-child(3) {
+                animation-delay: 0.4s;
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .stacked-cards:hover .feature:nth-child(1),
+            .stacked-cards:hover .feature:nth-child(2),
+            .stacked-cards:hover .feature:nth-child(3) {
+                transform: none !important;
+            }
+        }
+
+        @media (max-width: 1400px) {
+            .stacked-cards:hover .feature:nth-child(2) {
+                transform: translateX(-400px) rotate(0);
+            }
+
+            .stacked-cards:hover .feature:nth-child(3) {
+                transform: translateX(-800px) rotate(0);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .stacked-cards:hover .feature:nth-child(2) {
+                transform: translateX(-380px) rotate(0);
+            }
+
+            .stacked-cards:hover .feature:nth-child(3) {
+                transform: translateX(-760px) rotate(0);
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="subtitle">— typora theme —</div>
-        <a href="https://github.com/Seeridia/typora-theme-alto" target="_blank" class="zoom-link">
-            <img src="./imgs/Logo2.png" alt="" class="title">
-        </a>
-        <div class="subtitle">Encounter more elegant thinking.</div>
+        <div class="left-section">
+            <a href="https://github.com/Seeridia/typora-theme-alto" target="_blank">
+                <img src="./imgs/Logo2.png" alt="Alto Theme" class="title">
+            </a>
+            <div class="subtitle">Encounter more elegant thinking.</div>
+            <div class="description">
+                Alto is born for a more elegant Typora interface. It doesn't modify the basic style of the original theme,
+                but redesigns the Typora interface to make it more concise, beautiful, and dynamic.
+            </div>
+            <a href="https://github.com/Seeridia/typora-theme-alto" class="button">
+                <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path fill="currentColor"
+                            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                        </path>
+                    </svg>
+                </div>
+                <span>Get Started</span>
+            </a>
+        </div>
+        
+        <div class="right-section">
+            <div class="stacked-cards">
+                <div class="feature">
+                    <h3>Elegant Design</h3>
+                    <p>Refined interface with attention to every detail</p>
+                </div>
+                <div class="feature">
+                    <h3>Flexible</h3>
+                    <p>Compatible with various themes like Lapis and Spring</p>
+                </div>
+                <div class="feature">
+                    <h3>Customizable</h3>
+                    <p>Easy to configure with your preferred colors</p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
