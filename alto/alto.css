@@ -592,7 +592,7 @@ footer.ty-footer {
     width: 22rem;
 }
 
-header,
+header, /* 这里的 header 同时也控制偏好设置中的整个顶栏 */
 #megamenu-content {
     background-image: none !important;
     background-color: var(--alto-main-color) !important;
@@ -793,6 +793,10 @@ input[type=search]:focus {
     box-shadow: none !important;
 }
 
+.nav-group-item {
+    background: none !important;
+}
+
 .nav-group-item.active {
     background-color: var(--alto-main-color) !important;
     border-radius: 7px;
@@ -818,7 +822,7 @@ button.btn-default:not([data-localize="Cancel"]) {
 
 .export-detail,
 .export-item.active {
-    background: rgba(244, 244, 244) !important;
+    background: rgba(143, 143, 143, 0.1) !important;
 }
 
 .window-header {

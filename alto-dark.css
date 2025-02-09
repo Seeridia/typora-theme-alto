@@ -4,27 +4,42 @@
 :root {
     --alto-accent-color: #487dac;
     --alto-main-color: #070C14;
-    --alto-content-color: rgb(20, 20, 20);
+    --alto-content-color: rgb(30, 30, 30);
     --alto-text-color: #fff;
 }
 
 content {
-    background-color: rgba(20, 20, 20, 0.75);
+    background-color: rgba(30, 30, 30, 0.75);
 }
 
 content:hover {
-    background-color: rgba(20, 20, 20, 1);
-}
-
-#spell-check-panel,
-#footer-word-count-info,
-[role="menu"] {
-    border: #8a8d8f;
+    background-color: rgba(30, 30, 30, 1);
 }
 
 /* 右键菜单 */
 .context-menu.dropdown-menu>.active>a,
 .context-menu.dropdown-menu>li>a:hover,
 .menu-style-btn.active {
-    background-color: #373A47;
+    background-color: #4a4a4a;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent;
+}
+
+#spell-check-panel,
+#footer-word-count-info,
+[role="menu"] {
+    border-color: #4a4a4a;
+}
+
+/* 偏好设置 */
+.nav-group-item.active,
+[data-localize="OK"],
+button.btn-default:not([data-localize="Cancel"]) {
+    background-color: rgba(143, 143, 143, 0.1) !important;
+}
+
+.window {
+    background: var(--alto-main-color) !important;
 }
