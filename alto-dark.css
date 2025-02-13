@@ -1,5 +1,17 @@
+/* 
+ *   Typora Theme - Alto - Dark Version / Author - Seeridia
+ *   https://github.com/Seeridia/typora-theme-alto
+ */
+
 @import "alto/lapis/lapis-dark.css";
 @import "alto/alto.css";
+
+/*
+
+深色模式目前还没找到合适的配色方案，这里只是简单的修改了一下颜色...
+Dark mode currently has no suitable color scheme, here is a simple color change...
+
+*/
 
 :root {
     --alto-accent-color: #487dac;
