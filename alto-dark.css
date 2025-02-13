@@ -15,24 +15,34 @@ Dark mode currently has no suitable color scheme, here is a simple color change.
 
 :root {
     --alto-accent-color: #487dac;
-    --alto-main-color: #070C14;
-    --alto-content-color: rgb(30, 30, 30);
+    --alto-main-color: #181c24;
+    --alto-content-color: rgb(30, 34, 42);
     --alto-text-color: #fff;
 }
 
 content {
-    background-color: rgba(30, 30, 30, 0.75);
+    background-color: rgba(30, 34, 42, 0.75);
 }
 
 content:hover {
-    background-color: rgba(30, 30, 30, 1);
+    background-color: rgba(30, 34, 42, 1);
+}
+
+/* 侧边底栏 */
+#sidebar-files-menu.dropdown-menu>li>a:hover {
+    background-color: #2b2e37;
 }
 
 /* 右键菜单 */
 .context-menu.dropdown-menu>.active>a,
 .context-menu.dropdown-menu>li>a:hover,
 .menu-style-btn.active {
-    background-color: #4a4a4a;
+    background-color: #2b2e37;
+}
+
+/* 最近文件 */
+.megamenu-menu-panel tbody tr:hover {
+    background-color: #2b2e37 !important;
 }
 
 #recent-file-panel tbody tr:nth-child(2n-1) {

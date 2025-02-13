@@ -24,8 +24,8 @@ html {
 
 [role="menu"] li>a {
     border-radius: 7px !important;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .outline-btn {
@@ -546,11 +546,14 @@ footer.ty-footer {
     transform: scale(0.98);
     transition: all 0.2s ease;
     box-sizing: border-box;
+    background-color: var(--alto-content-color);
 }
 
 .long-btn:hover {
     transform: scale(0.99);
     box-shadow: 0 0 0 1.5px var(--alto-accent-color);
+    background-color: var(--alto-main-color);
+    filter: brightness(1.08);
 }
 
 .theme-preview-div:hover {
