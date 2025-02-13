@@ -803,10 +803,14 @@ input[type=search]:focus {
     color: var(--alto-text-color) !important;
 }
 
-.list-group-header input:not([type=range]):not([type=color]),
 select {
     border-radius: 4px !important;
     border: 1px solid #8A8A8A !important;
+}
+
+select:focus {
+    border-color: transparent !important;
+    outline: 2px solid var(--alto-accent-color) !important;
 }
 
 [data-localize="OK"],

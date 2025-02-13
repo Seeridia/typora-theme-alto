@@ -33,10 +33,14 @@ content:hover {
     border-color: #4a4a4a;
 }
 
+/* 弹窗选项 */
+.modal-open .modal.fade.in {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
 /* 偏好设置 */
 .nav-group-item.active,
-[data-localize="OK"],
-button.btn-default:not([data-localize="Cancel"]) {
+[data-localize="OK"] {
     background-color: rgba(143, 143, 143, 0.1) !important;
 }
 
