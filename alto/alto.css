@@ -4,11 +4,9 @@
  */
 
 @media print {
-
     html {
-        background-color: unset;
+        background-color: #fff !important;
     }
-
 }
 
 html {
@@ -42,11 +40,19 @@ content {
     margin: 2px 8px 8px 8px;
 }
 
+.pin-outline content {
+    bottom: 25px !important;
+}
+
 /* 书写区域鼠标移入的动画 */
 content:hover {
     margin: 0px 5px 5px 5px;
     background-color: rgba(255, 255, 255, 1);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.pin-outline content:hover {
+    bottom: 0px !important;
 }
 
 /* 使得小窗口下，书写区域放大后底栏不遮挡 */
@@ -140,6 +146,19 @@ footer.stopselect.ty-footer {
 }
 
 /*
+ * 顶栏
+ * Header
+ */
+
+/* 顶栏按钮 */
+.btn:active{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+/*
  * 侧边栏
  * Sidebar
  */
@@ -198,10 +217,16 @@ footer.stopselect.ty-footer {
 }
 
 /* 文件被拖动 */
+.blink-area {
+    background-color: var(--alto-content-color) !important;
+}
+
+/* 文件被拖动后拉到的目标 */
 .ty-on-drag-enter {
     border-radius: 6px;
     border: 1.5px solid var(--alto-accent-color);
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
+    background-color: var(--alto-content-color);
 }
 
 /* 文件被重命名 */
@@ -257,10 +282,6 @@ input {
     border-radius: 6px;
 }
 
-.sidebar-footer-item.footer-item-right.footer-btn.file-action-item.not-empty-menu-group.show {
-    padding-top: 0px;
-}
-
 #typora-sidebar .file-tree-node.file-library-file-node:not(.active):hover .file-node-background {
     background-color: transparent;
 }
@@ -270,7 +291,16 @@ input {
     background-color: transparent;
 }
 
+/* 列表视图文件列表 */
+.file-list-item.active {
+    background-color: var(--alto-content-color);
+}
+
 /* 侧边底栏 */
+.sidebar-footer{
+    background-color: var(--alto-main-color);
+}
+
 #sidebar-files-menu {
     border-radius: 7px;
     border-color: var(--alto-content-color) !important;
@@ -297,6 +327,10 @@ input {
 .ty-three-cells:before {
     position: relative;
     top: 0.15rem;
+}
+
+.sidebar-footer-item.footer-item-right.footer-btn.file-action-item.not-empty-menu-group.show {
+    padding-top: 0px;
 }
 
 /* 侧边栏最近任务展开图标 */
@@ -402,19 +436,20 @@ footer.ty-footer {
 }
 
 .outline-item-active:not(.outline-item-wrapper)::after {
-    content: "";
+    content: "●";
     position: relative;
-    width: 11px;
-    height: 8px;
-    background: var(--alto-accent-color);
     float: right;
-    top: -12px;
+    top: -1.6rem;
     z-index: 100;
-    border-radius: 40% 20% 20% 40%;
+    color: var(--alto-accent-color);
 }
 
 .context-menu .state-on:before {
     content: "\2713";
+}
+
+.outline-item:hover {
+    background-color: var(--alto-content-color);
 }
 
 /*
@@ -702,12 +737,12 @@ header, /* 这里的 header 同时也控制偏好设置中的整个顶栏 */
 
 /* 查找、替换 */
 #md-searchpanel {
-    position: relative;
-    top: 2%;
-    left: 2% !important;
-    width: 55%;
+    position: fixed;
+    top: 4%;
+    left: 59% !important;
+    width: 40%;
     padding: 0 !important;
-    background-color: var(--alto-main-color);
+    background-color: inherit;
     flex-direction: row;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
     border-radius: 7px;
@@ -718,7 +753,7 @@ header, /* 这里的 header 同时也控制偏好设置中的整个顶栏 */
     display: flex;
     position: fixed;
     top: 3.3rem;
-    left: 19.7rem !important;
+    left: 89rem !important;
     width: 25%;
     padding: 0 !important;
     background-color: var(--alto-main-color);
