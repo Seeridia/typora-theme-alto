@@ -66,7 +66,16 @@ footer.ty-footer {
     border-radius: 7px;
     border: #d1d6d9 solid 1px;
     background-color: var(--alto-content-color);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* 非 Mac 下的阴影效果 */
+@media not (-webkit-backdrop-filter: blur(1px)) {
+
+    #spell-check-panel,
+    #footer-word-count-info,
+    [role="menu"] {
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+    }
 }
 
 #ty-spell-check-panel-item-label {
@@ -142,7 +151,7 @@ footer.stopselect.ty-footer {
  */
 
 /* 顶栏按钮 */
-.btn:active{
+.btn:active {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
@@ -165,8 +174,11 @@ footer.stopselect.ty-footer {
     color: var(--alto-text-color);
 }
 
-#sidebar-content.sidebar-content {
-    top: 4rem;
+/* 非 Mac 下的侧边栏内容定位 */
+@media not (-webkit-backdrop-filter: blur(1px)) {
+    #sidebar-content.sidebar-content {
+        top: 4rem;
+    }
 }
 
 .file-tree-node.active>.file-node-background {
@@ -288,7 +300,7 @@ input {
 }
 
 /* 侧边底栏 */
-.sidebar-footer{
+.sidebar-footer {
     background-color: var(--alto-main-color);
 }
 
@@ -629,7 +641,8 @@ footer.ty-footer {
     transition: width 0.2s ease;
 }
 
-header, /* 这里的 header 同时也控制偏好设置中的整个顶栏 */
+header,
+/* 这里的 header 同时也控制偏好设置中的整个顶栏 */
 #megamenu-content {
     background-image: none !important;
     background-color: var(--alto-main-color) !important;
