@@ -42,7 +42,6 @@ content {
 
 /* 书写区域鼠标移入的动画 */
 content:hover {
-    margin: 0px 5px 5px 5px;
     background-color: rgba(255, 255, 255, 1);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
 }
