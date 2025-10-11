@@ -27,30 +27,19 @@ It is recommended to use the Alto theme in the **Unibody** window style.
 
 ## Installation
 
-The main file of this project is `alto.css`. The built-in themes in the above previews are [Lapis](https://github.com/YiNNx/typora-theme-lapis) (by [YiNNx](https://github.com/YiNNx)) and [Spring](https://github.com/SprInec/typora-spring-theme) (by [SprInec](https://github.com/SprInec)). They are included as submodules in the `alto` folder. So if you download the zip file of this project directly, these submodules will not be downloaded together. You need to download them separately or use the method provided below.
+1. Recommended: Download a release
 
-1. Method 1: Clone this project and its submodules [Recommended]
-   1. Make sure you have Git installed.
-   
-   2. Open a terminal in Typora's theme folder and enter the following command:
-   
-      ```powershell
-      git clone --recurse-submodules https://github.com/Seeridia/typora-theme-alto.git temp_folder
-      
-      Get-ChildItem -Path 'temp_folder' -Force | ForEach-Object {
-          $destination = Join-Path -Path '.' -ChildPath $_.Name
-          if (Test-Path $destination) {
-              Remove-Item -Path $destination -Recurse -Force
-          }
-          Move-Item -Path $_.FullName -Destination '.' -Force
-      }
-      
-      Remove-Item -Path 'temp_folder' -Recurse -Force
-      ```
-   
-2. Method 2: Download the zip file from the project's [releases](https://github.com/Seeridia/typora-theme-alto/releases) and extract it into Typora's theme folder.
-   
-   The packaged files in the [releases](https://github.com/Seeridia/typora-theme-alto/releases) usually include [Lapis](https://github.com/YiNNx/typora-theme-lapis) and [Spring](https://github.com/SprInec/typora-spring-theme).
+   Download the theme ZIP from this project's Releases page and extract it into Typora's theme folder. The release packages typically include the bundled themes and can be used directly.
+
+2. Clone the repository (when you prefer to use submodules)
+
+   This project includes two template themes — [Lapis](https://github.com/YiNNx/typora-theme-lapis) (by YiNNx) and [Spring](https://github.com/SprInec/typora-spring-theme) (by SprInec) — as submodules under the `alto` directory. If you clone or download the repository without initializing submodules, those themes will not be included. Use the following Git command to clone with submodules:
+
+   ```bash
+   git clone --recurse-submodules https://github.com/Seeridia/typora-theme-alto.git
+   ```
+
+   Alternatively, if you prefer the manual copy approach used in some scripts, you can clone to a temporary folder and move files into the Typora theme folder.
 
 ## Configuration
 
