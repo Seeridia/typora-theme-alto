@@ -36,34 +36,21 @@ Alto 是个 `css` 文件，以引用其他主题的文件来为其提供更好�
 
 ## 安装 Installation
 
-该项目主体是 `alto.css` ，上面的预览所内置的主题是 [Lapis](https://github.com/YiNNx/typora-theme-lapis) ( [YiNNx](https://github.com/YiNNx) ) 和 [Spring](https://github.com/SprInec/typora-spring-theme) ( [SprInec](https://github.com/SprInec) ) ，他们以子模块的形式放在了文件夹 `alto` 中，所以如果你直接下载的该项目的 zip 文件，这两个模块并不会一起下载下来，你需要单独下载，或者采用我下面给出的方式。
+1. **方式一【推荐】：Release 下载**
 
-1. 方式一：克隆该项目及其子模块
-   1. 确保你安装了 Git 。
-   
-   2. 在 typora 主题文件夹 中打开终端，输入以下命令：
-   
-      ```powershell
-      git clone --recurse-submodules https://github.com/Seeridia/typora-theme-alto.git temp_folder
-      
-      Get-ChildItem -Path 'temp_folder' -Force | ForEach-Object {
-          $destination = Join-Path -Path '.' -ChildPath $_.Name
-          if (Test-Path $destination) {
-              Remove-Item -Path $destination -Recurse -Force
-          }
-          Move-Item -Path $_.FullName -Destination '.' -Force
-      }
-      
-      Remove-Item -Path 'temp_folder' -Recurse -Force
-      ```
-   
-2. 方式二：从该项目的 [releases](https://github.com/Seeridia/typora-theme-alto/releases) 下载 zip 文件，然后解压到 Typora 的主题文件夹中
-   
-   [releases](https://github.com/Seeridia/typora-theme-alto/releases) 里的打包好的文件一般会包含 [Lapis](https://github.com/YiNNx/typora-theme-lapis) 和 [Spring](https://github.com/SprInec/typora-spring-theme)
+   从该项目的 [Releases](https://github.com/Seeridia/typora-theme-alto/releases) 下载 zip 文件，然后解压到 Typora 的主题文件夹中。该下载的文件包含完整的主题文件，可以直接使用。
+
+2. **方式二：克隆**
+
+   本项目内置了两个模板主题：[Lapis](https://github.com/YiNNx/typora-theme-lapis) ( [YiNNx](https://github.com/YiNNx) ) 和 [Spring](https://github.com/SprInec/typora-spring-theme) ( [SprInec](https://github.com/SprInec) ) ，他们以子模块的形式放在了文件夹 `alto` 中，所以如果你直接下载或克隆该项目的 zip 文件，这两个模块并不会一起下载下来，你需要采用下面的 Git 命令来下载。
+
+   ```
+   git clone --recurse-submodules https://github.com/Seeridia/typora-theme-alto.git
+   ```
 
 ## 配置 Configuration
 
-> 可选操作，默认为 Lapis 主题和蓝色配色（Light 模式）
+> 可选操作，默认为 Lapis 主题和蓝色配色（Light 模式）;
 
 1. 在 `偏好设置 > 外观 > 窗口样式` 改为 “一体化” 样式，关闭 Typora
 
