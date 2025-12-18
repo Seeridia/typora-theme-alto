@@ -97,7 +97,7 @@ footer.ty-footer {
 
 /* 滚动条 */
 ::-webkit-scrollbar {
-    width: 0.5rem;
+    width: 1rem;
 }
 
 /* 设置界面不显示滚动条 */
@@ -108,14 +108,16 @@ footer.ty-footer {
 ::-webkit-scrollbar-thumb {
     background: #0000001c !important;
     border-radius: 10px;
+    border: 0.2rem solid transparent;
+    background-clip: padding-box !important;
 }
 
 ::-webkit-scrollbar-track {
+    margin: 8px 0px 8px 2px;
     background-color: transparent;
 }
 
 #write {
-    margin-bottom: 0px;
     background-color: transparent;
 }
 
